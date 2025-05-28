@@ -4,6 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class StoreUserRequest extends FormRequest
 {
@@ -12,11 +14,15 @@ class StoreUserRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        if (!Auth::check()) {
-            return false;
+        if (in_array($this->route()->getActionMethod(), ['destroy'])) 
+        {
+            if (!Auth::check()) 
+            {
+                return false;
+            }
+            return Auth::id() == $this->user->id;
         }
-
-        return Auth::id() == $this->user->id;
+        return true;
     }
 
     /**
@@ -26,11 +32,29 @@ class StoreUserRequest extends FormRequest
      */
     public function rules(): array
     {
+        if (in_array($this->route()->getActionMethod(), ['store'])){
+            return [
+                'name' => 'required|string|max:255',
+                'email'=> 'required|string|email|unique:users,email',
+                'password' => 'sometimes|nullable|string|min:8|max:25',
+                'addressId' => 'string|nullable|exists:address,id'
+            ];
+        }
         return [
-            'name' => 'required|string|max:255',
-            'email'=> 'required|string|email|unique:users,email,'.$this->user->id,
-            'password' => 'sometimes|nullable|string|min:8|max:25|confirmed',
+            'name' => 'sometimes|nullable|string|max:255',
+            'email'=> 'sometimes|nullable|string|email|unique:users,email',
+            'password' => 'sometimes|nullable|string|min:8|max:25',
             'addressId' => 'string|nullable|exists:address,id'
         ];
+    }
+
+    
+    public function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json([
+            'success' => false,
+            'message' => 'Validation failed',
+            'errors' => $validator->errors()
+        ], 422));
     }
 }
