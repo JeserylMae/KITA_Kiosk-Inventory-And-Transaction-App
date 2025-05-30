@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
+
 class landing extends Component
 {
     /**
@@ -14,6 +15,11 @@ class landing extends Component
     public function __construct()
     {
         //
+    }
+
+    public function loginRedirect() 
+    {
+        return redirect('/login');
     }
 
     /**
