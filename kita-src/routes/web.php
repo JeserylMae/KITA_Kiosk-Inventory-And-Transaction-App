@@ -1,11 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
+use Illuminate\Support\Facades\Route;
+use App\Livewire\Components\Landing;
 
-Route::get('/', function () {
-    return view('landing');
-});//->name('home');
+
+Route::get('/', Landing::class)->name('landing');
+
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
