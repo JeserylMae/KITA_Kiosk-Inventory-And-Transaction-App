@@ -6,6 +6,3 @@
 @source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
 @source '../../vendor/livewire/flux/stubs/**/*.blade.php';
 
-@theme {
-    --color-dark-green-80: #2B3718CC;
-}

@@ -26,6 +26,10 @@
     --color-accent: var(--color-neutral-800);
     --color-accent-content: var(--color-neutral-800);
     --color-accent-foreground: var(--color-white);
+
+    --color-black-80: #1E1E1E;
+    --color-dark-green-80: rgb(43, 55, 24, 0.8);
+    --color-dark-green-20: rgb(43, 55, 24, 0.2);
 }
 
 @layer theme {
@@ -47,6 +51,17 @@
     }
 }
 
+@layer components {
+    .bg-style-mod {
+        @apply bg-cover bg-right bg-no-repeat bg-fixed w-full h-full;
+    }
+
+    .main-container {
+        @apply mx-auto lg:max-w-[1024px] h-screen;
+        @apply shadow-2xl shadow-black;
+    }
+}
+
 [data-flux-field]:not(ui-radio, ui-checkbox) {
     @apply grid gap-2;
 }
@@ -60,6 +75,8 @@ textarea:focus[data-flux-control],
 select:focus[data-flux-control] {
     @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
 }
+
+
 
 /* \[:where(&)\]:size-4 {
     @apply size-4;
