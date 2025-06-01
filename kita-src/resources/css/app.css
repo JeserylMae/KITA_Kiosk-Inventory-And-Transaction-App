@@ -10,6 +10,7 @@
 
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    ----font-instrument: 'Instrument Sans';
 
     --color-zinc-50: #fafafa;
     --color-zinc-100: #f5f5f5;
@@ -49,6 +50,18 @@
     ::file-selector-button {
         border-color: var(--color-gray-200, currentColor);
     }
+
+    :root {
+        --color-gray:               rgb(30, 30, 30);
+        --color-dark-green:         rgb(43, 55, 24);
+        --color-dark-green-80:      rgba(43, 55, 24, 0.8);
+        --color-dark-green-20:      rgba(43, 55, 24, 0.2);
+        --color-bright-green:       rgb(132, 204, 24);
+        --color-bright-green-80:    rgba(132, 204, 24, 0.8);
+        --color-white-80:           rgba(255, 255, 255, 0.8);
+        --color-white-60:           rgba(255, 255, 255, 0.6);
+        --color-white-5:            rgba(255, 255, 255, 0.05);
+    }
 }
 
 @layer components {
@@ -60,6 +73,24 @@
         @apply mx-auto lg:max-w-[1024px] h-screen;
         @apply shadow-2xl shadow-black;
     }
+}
+
+@layer utilities {
+  .text-outline {
+    text-shadow:
+      -1px -1px 0 #000,
+       1px -1px 0 #000,
+      -1px  1px 0 #000,
+       1px  1px 0 #000;
+  }
+
+  .text-outline-white {
+    text-shadow:
+      -2px -2px 0 var(--color-bright-green-80),
+       2px -2px 0 var(--color-bright-green-80),
+      -2px  2px 0 var(--color-bright-green-80),
+       2px  2px 0 var(--color-bright-green-80);
+  }
 }
 
 [data-flux-field]:not(ui-radio, ui-checkbox) {
