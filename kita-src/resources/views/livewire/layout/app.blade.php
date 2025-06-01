@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     @include('partials.head', ['title' => $title])
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-     @livewireStyles
+    @stack('styles')
+    @livewireStyles
 </head>
 
 <body class="bg-dark-green-20">
