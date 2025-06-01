@@ -6,3 +6,8 @@
 @source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
 @source '../../vendor/livewire/flux/stubs/**/*.blade.php';
 
+@layer components {
+    .try-mod {
+        @apply w-full;
+    }
+}
