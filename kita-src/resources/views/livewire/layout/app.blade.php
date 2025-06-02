@@ -6,8 +6,8 @@
     @livewireStyles
 </head>
 
-<body class="bg-dark-green-20">
-    <div class="bg-style-mod main-container"
+<body style="background-color: var(--color-dark-green-20)">
+    <div class="bg-cover bg-right bg-no-repeat bg-fixed w-full mx-auto lg:max-w-[90rem] h-max shadow-2xl shadow-black"
          style="background-image: url('{{ $bgImgUrl }}')">
         
         {{ $slot }}
