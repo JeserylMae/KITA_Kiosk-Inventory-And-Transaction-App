@@ -6,39 +6,19 @@
 @source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
 @source '../../vendor/livewire/flux/stubs/**/*.blade.php';
 
-@custom-variant dark (&:where(.dark, .dark *));
-
-@theme {
-    --font-instrument: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-}
-
-@layer theme {
-    .dark {
-        --color-accent: var(--color-white);
-        --color-accent-content: var(--color-white);
-        --color-accent-foreground: var(--color-neutral-800);
-    }
-}
-
 @layer base {
-    *,
-    ::after,
-    ::before,
-    ::backdrop,
-    ::file-selector-button {
-        border-color: var(--color-gray-200, currentColor);
-    }
-
     :root {
         --color-gray:               rgb(30, 30, 30);
-        --color-dark-green:         rgb(43, 55, 24);
         --color-dark-green-80:      rgba(43, 55, 24, 0.8);
+        --color-dark-green:         rgb(43, 55, 24);
         --color-dark-green-20:      rgba(43, 55, 24, 0.2);
         --color-bright-green:       rgb(132, 204, 24);
         --color-bright-green-80:    rgba(132, 204, 24, 0.8);
         --color-white-80:           rgba(255, 255, 255, 0.8);
         --color-white-60:           rgba(255, 255, 255, 0.6);
         --color-white-5:            rgba(255, 255, 255, 0.05);
+        
+        --font-instrument: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     }
 }
 
@@ -55,5 +35,15 @@
 @layer components {
     .main-section {
         @apply flex p-4 w-full h-full;
+    }
+
+    .primary-button {
+        @apply !text-white;
+        background-color: var(--color-bright-green-80) !important;
+    }
+
+    .font-heading {
+        @apply text-5xl font-bold;
+        font-family: var(--font-instrument);
     }
 }
