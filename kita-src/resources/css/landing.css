@@ -7,7 +7,25 @@
 @source '../../vendor/livewire/flux/stubs/**/*.blade.php';
 
 @layer components {
-    .try-mod {
-        @apply w-full;
+    .navbar-wrapper {
+        @apply flex flex-row gap-8 rounded-full;
+        background-color: var(--color-dark-green-80);
+
+    }
+
+    .button-logo img {
+        @apply w-[3.1rem] h-auto;
+    }
+
+    [data-current] {
+        @apply !text-white mr-5;
+    }
+
+    [data-current]::clicked {
+        @apply border-b-2 !border-white;
+    }
+
+    .content-wrapper {
+        @apply p-[1.25rem] h-max sm:max-w-3/4 lg:max-w-2/3 flex flex-col gap-4;
     }
 }
