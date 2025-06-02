@@ -8,9 +8,11 @@
 
 @layer components {
     .navbar-wrapper {
-        @apply flex flex-row gap-8 rounded-full;
-        background-color: var(--color-dark-green-80);
+        @apply gap-8 rounded-full w-full h-max bg-[var(--color-dark-green-80)];
+    }
 
+    .flex-row-jstart-amid {
+        @apply flex flex-row justify-start items-center;
     }
 
     .button-logo img {
