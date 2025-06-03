@@ -14,21 +14,14 @@
         --color-dark-green-20:      rgba(43, 55, 24, 0.2);
         --color-bright-green:       rgb(132, 204, 24);
         --color-bright-green-80:    rgba(132, 204, 24, 0.8);
+        --color-bright-green-70:    rgba(123, 204, 24, 0.7);
         --color-white-80:           rgba(255, 255, 255, 0.8);
         --color-white-60:           rgba(255, 255, 255, 0.6);
         --color-white-5:            rgba(255, 255, 255, 0.05);
         
-        --font-instrument: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    }
-}
+        --font-instrument: 'Instrument Sans', var(--font-sans);
 
-@layer utilities {
-    .text-outline-bright-green {
-    text-shadow:
-        -2px -2px 0 var(--color-bright-green-80),
-        2px -2px 0 var(--color-bright-green-80),
-        -2px  2px 0 var(--color-bright-green-80),
-        2px  2px 0 var(--color-bright-green-80);
+        --radius-xs: 0.63rem;
     }
 }
 
@@ -37,13 +30,39 @@
         @apply flex p-4 w-full h-full;
     }
 
-    .primary-button {
-        @apply !text-white;
-        background-color: var(--color-bright-green-80) !important;
+    .primary-btn {
+        @apply !text-black !bg-[var(--color-bright-green-80)] hover:!bg-[var(--color-bright-green-70)];
+        font-family: var(--font-instrument) !important;
     }
 
-    .font-heading {
-        @apply text-5xl font-bold;
-        font-family: var(--font-instrument);
+    h1 {
+        @apply text-3xl/tight sm:text-4xl/tight md:text-5xl/tight lg:text-6xl/tight font-black;
+    }
+
+    h2 {
+        @apply text-lg/tight sm:text-xl/tight md:text-2xl/tight font-bold sm:font-medium;
+    }
+
+    p {
+        @apply text-sm/tight sm:text-base/tight;
+    }
+    
+    .btn-logo img {
+        @apply w-[3.1rem] h-auto;
+    }
+
+    .btn-logo {
+        @apply transition delay-75 ease-in hover:cursor-pointer hover:scale-105;
+    }
+
+    .active-btn {
+        @apply !font-semibold !transition !ease-in-out active:!scale-90;
+    }
+
+    h1, h2, h3, 
+    h4, h5, p,
+    [data-current],
+    [data-flux-button] {
+        font-family: var(--font-instrument) !important;
     }
 }
