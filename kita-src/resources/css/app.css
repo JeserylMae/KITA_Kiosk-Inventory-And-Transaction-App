@@ -8,10 +8,10 @@
 
 @layer base {
     :root {
-        --color-gray:               rgb(30, 30, 30);
-        --color-dark-green-80:      rgba(43, 55, 24, 0.8);
+        --color-gray-30:            rgb(30, 30, 30);
         --color-dark-green:         rgb(43, 55, 24);
-        --color-dark-green-20:      rgba(43, 55, 24, 0.2);
+        --color-dark-green-80:      rgba(43, 55, 24, 0.8);
+        --color-dark-green-25:      rgba(43, 55, 24, 0.25);
         --color-bright-green:       rgb(132, 204, 24);
         --color-bright-green-80:    rgba(132, 204, 24, 0.8);
         --color-bright-green-70:    rgba(123, 204, 24, 0.7);
@@ -27,7 +27,7 @@
 
 @layer components {
     .main-section {
-        @apply flex p-4 w-full h-full;
+        @apply flex p-4 w-full h-max;
     }
 
     .primary-btn {
@@ -40,9 +40,12 @@
     }
 
     h2 {
-        @apply text-lg/tight sm:text-xl/tight md:text-2xl/tight font-bold sm:font-medium;
+        @apply text-lg/tight sm:text-xl/tight md:text-2xl/tight font-bold sm:font-semibold;
     }
 
+    h5 {
+        @apply text-base/tight font-semibold;
+    }
     p {
         @apply text-sm/tight sm:text-base/tight;
     }
