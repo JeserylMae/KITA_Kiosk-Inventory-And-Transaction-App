@@ -19,7 +19,7 @@
 
 @layer components {
     .navbar-wrapper {
-        @apply gap-8 rounded-full w-full h-max bg-[var(--color-dark-green-80)];
+        @apply gap-8 rounded-full w-full h-max bg-none sm:bg-[var(--color-dark-green-80)];
     }
 
     .navbar-wrapper [data-flux-navbar] {
@@ -43,14 +43,18 @@
     }
 
     .welcome-wrapper {
-        @apply lg:gap-8 lg:px-12 py-14;
+        @apply lg:gap-8 lg:px-12 py-14 mb-14;
     }
 
     .glassy-green {
-        @apply bg-[var(--color-dark-green-20)] border-[var(--color-dark-green)] border-4 rounded-3xl backdrop-blur-sm sm:mx-4;
+        @apply bg-[var(--color-dark-green-25)] border-[var(--color-dark-green)] border-4 rounded-3xl backdrop-blur-sm sm:mx-4;
     }
     
-    .blury-white {
+    .blurry-white {
         @apply bg-[var(--color-white-60)] backdrop-blur-2xl p-3 rounded-[var(--radius-xs)];
+    }
+
+    .display-img {
+        @apply w-50 rounded-xs border-1 border-[var(--color-white-60)];
     }
 }
