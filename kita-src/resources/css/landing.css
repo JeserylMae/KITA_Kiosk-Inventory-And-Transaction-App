@@ -6,28 +6,51 @@
 @source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
 @source '../../vendor/livewire/flux/stubs/**/*.blade.php';
 
+
+@layer utilities {
+    .text-outline-bright-green {
+    text-shadow:
+        -2px -2px 0 var(--color-bright-green-80),
+        2px -2px 0 var(--color-bright-green-80),
+        -2px  2px 0 var(--color-bright-green-80),
+        2px  2px 0 var(--color-bright-green-80);
+    }
+}
+
 @layer components {
     .navbar-wrapper {
         @apply gap-8 rounded-full w-full h-max bg-[var(--color-dark-green-80)];
+    }
+
+    .navbar-wrapper [data-flux-navbar] {
+        @apply !hidden md:!flex;
     }
 
     .flex-row-jstart-amid {
         @apply flex flex-row justify-start items-center;
     }
 
-    .button-logo img {
-        @apply w-[3.1rem] h-auto;
+    .flex-col-jcenter-astart {
+        @apply flex flex-col justify-center items-start;
     }
 
     [data-current] {
-        @apply !text-white mr-5;
+        @apply !text-white mr-5 active:!border-b-2 active:!border-white;
     }
-
-    [data-current]::clicked {
-        @apply border-b-2 !border-white;
-    }
-
+    
     .content-wrapper {
-        @apply p-[1.25rem] h-max sm:max-w-3/4 lg:max-w-2/3 flex flex-col gap-4;
+        @apply p-[1.25rem] h-max sm:mx-0 md:max-w-[90%] xl:max-w-[70%] flex flex-col gap-4;
+    }
+
+    .welcome-wrapper {
+        @apply lg:gap-8 lg:px-12 py-14;
+    }
+
+    .glassy-green {
+        @apply bg-[var(--color-dark-green-20)] border-[var(--color-dark-green)] border-4 rounded-3xl backdrop-blur-sm sm:mx-4;
+    }
+    
+    .blury-white {
+        @apply bg-[var(--color-white-60)] backdrop-blur-2xl p-3 rounded-[var(--radius-xs)];
     }
 }
