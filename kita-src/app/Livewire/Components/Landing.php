@@ -12,7 +12,7 @@ use function Livewire\Volt\layout;
 #[Title('Kita')]
 class Landing extends Component
 {
-    public function layoutData() 
+    private function layoutData() 
     {
         return [
             'bgImgUrl' => asset('/assets/bg-landing.jpeg'),
