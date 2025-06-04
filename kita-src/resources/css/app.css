@@ -92,6 +92,18 @@
         @apply !font-semibold !transition !ease-in-out active:!scale-90;
     }
 
+    .flex-row-jstart-amid {
+        @apply flex flex-row justify-start items-center;
+    }
+
+    .flex-col-jcenter-astart {
+        @apply flex flex-col justify-center items-start;
+    }
+
+    .flex-col-jcenter-acenter {
+        @apply flex flex-col justify-center items-center;
+    }
+
     h1, h2, h3, 
     h4, h5, p,
     [data-current],
