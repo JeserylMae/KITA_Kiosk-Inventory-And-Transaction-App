@@ -1,0 +1,34 @@
+
+@import 'tailwindcss';
+@import '../../vendor/livewire/flux/dist/flux.css';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
+@source '../../vendor/livewire/flux/stubs/**/*.blade.php';
+
+
+@layer components {
+    .bg-styling {
+        @apply w-2/3 h-screen bg-cover bg-left bg-no-repeat ml-auto mr-0;
+        @apply bg-[url('/assets/curvy-dark-green-frame.svg')];
+    }
+
+    .small-text {
+        @apply text-xs text-white font-medium;
+    }
+    
+    [data-flux-field] {
+        @apply !w-full;
+    }
+
+    [data-flux-input] {
+        input {
+            @apply !border-white !border-1 !rounded-full;
+        }
+    }
+
+    .welcome-img {
+        @apply w-md;
+    }
+}
