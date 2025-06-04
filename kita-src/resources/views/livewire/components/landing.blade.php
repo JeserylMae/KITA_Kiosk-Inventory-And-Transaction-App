@@ -1,11 +1,11 @@
 
 @push('styles')
-    @vite('resources/css/landing.css')
+    @vite(['resources/css/landing.css', 'resources/js/landing.js'])
 @endpush
 
 
-<div class="main-section flex-col">
-    <div class="navbar-wrapper flex-row-jstart-amid"> 
+<div class="main-section flex-col select-none">
+    <div class="navbar-wrapper flex-row-jstart-amid fade-on-entry-animation"> 
         <button class="btn-logo active-btn">
             <img src="assets/kita-logo.png" alt="Kita Logo">
         </button>
@@ -24,7 +24,7 @@
 
     <div class="content-wrapper px-0 py-3 sm:p-[1.25rem] md:my-14">
 
-        <div class="content-wrapper glassy-green flex-col-jcenter-astart welcome-wrapper">
+        <div class="content-wrapper glassy-green flex-col-jcenter-astart welcome-wrapper fade-on-entry-animation">
             <h1 class="text-outline-bright-green">
                 Hi, We’re Kita — Your Smart Kiosk Companion
             </h1>
@@ -38,8 +38,8 @@
             <flux:button class="active-btn primary-btn" icon="rocket-launch" variant="primary">Join Now</flux:button>
         </div>
 
-        <div id="about" class="flex-col-jcenter-astart pt-4 gap-5"> 
-            <h2 class="glassy-green text-outline-bright-green py-2 px-6 tracking-wider"> About Us </h2>
+        <div id="about" class="flex-col-jcenter-astart pt-4 gap-5 fade-on-entry-animation"> 
+            <h2 class="glassy-green text-outline-bright-green py-2 px-6 tracking-wider fade-on-scroll-animation"> About Us </h2>
     
             <x-partials.glassy-text-block 
                 blockTitle="Designed for Every Sari-Sari Store Owner"
