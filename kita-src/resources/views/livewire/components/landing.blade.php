@@ -41,29 +41,26 @@
         <div id="about" class="flex-col-jcenter-astart pt-4 gap-5"> 
             <h2 class="glassy-green text-outline-bright-green py-2 px-6 tracking-wider"> About Us </h2>
     
-            @component('components.partials.glassy-text-block')
-                @slot('blockTitle') Designed for Every Sari-Sari Store Owner @endslot
-                
-                @slot('imgUrl') {{ asset('assets/about-us-1.png') }} @endslot
+            <x-partials.glassy-text-block 
+                blockTitle="Designed for Every Sari-Sari Store Owner"
+                imgUrl="{{ asset('assets/about-us-1.png') }}">
 
                 Kita was built with the everyday Filipino store owner in mind. Whether you're running a small neighborhood shop or a growing kiosk, Kita simplifies complex inventory and sales tracking tasks into a seamless digital experience. No more manual logs or lost records — just smart tools that help you monitor stock levels, transactions, and sales trends with ease.
-            @endcomponent
-
-            @component('components.partials.glassy-text-block')
-                @slot('blockTitle') Real-Time Insights, Smarter Decisions @endslot
-
-                @slot('imgUrl') {{ asset('assets/about-us-2.png')}} @endslot
+            </x-partials.glassy-text-block>
+            
+            <x-partials.glassy-text-block 
+                blockTitle="Real-Time Insights, Smarter Decisions"
+                imgUrl="{{ asset('assets/about-us-2.png') }}">
 
                 With Kita, you gain more than just record-keeping — you gain visibility. Generate detailed reports, analyze daily earnings, and visualize your store’s performance through charts and tables. Our system helps you make data-driven decisions, reduce stock shortages, and stay ahead of your day-to-day operations — all in just a few clicks.
-            @endcomponent
+            </x-partials.glassy-text-block>
 
-            @component('components.partials.glassy-text-block')
-                @slot('blockTitle') Your Partner in Everyday Business @endslot
-
-                @slot('imgUrl') {{ asset('assets/about-us-3.png') }} @endslot
+            <x-partials.glassy-text-block 
+                blockTitle="Your Partner in Everyday Business"
+                imgUrl="{{ asset('assets/about-us-3.png') }}">
 
                 Kita isn’t just an app — it’s your daily companion in managing and growing your sari-sari store. From recording transactions to generating clear and organized sales summaries, Kita is built to support your routine. Whether you’re restocking shelves or reviewing weekly performance, Kita keeps everything organized so you can focus on what matters most: serving your community and growing your business.
-            @endcomponent
+            </x-partials.glassy-text-block>
         </div>
     </div>
 
