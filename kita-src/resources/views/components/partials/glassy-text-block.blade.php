@@ -1,4 +1,6 @@
 
+@props(['blockTitle' => '', 'imgUrl' => null])
+
 <div class="glassy-green flex-col-jcenter-astart content-wrapper gap-4 p-4">
     <h5 class="blurry-white">{{ $blockTitle }}</h5>
     
