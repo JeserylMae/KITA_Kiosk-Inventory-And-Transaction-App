@@ -1,3 +1,4 @@
+
 @import 'tailwindcss';
 @import '../../vendor/livewire/flux/dist/flux.css';
 
@@ -24,14 +25,6 @@
 
     .navbar-wrapper [data-flux-navbar] {
         @apply !hidden md:!flex;
-    }
-
-    .flex-row-jstart-amid {
-        @apply flex flex-row justify-start items-center;
-    }
-
-    .flex-col-jcenter-astart {
-        @apply flex flex-col justify-center items-start;
     }
 
     [data-current] {
