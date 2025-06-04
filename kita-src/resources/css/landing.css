@@ -43,7 +43,7 @@
     }
 
     .welcome-wrapper {
-        @apply lg:gap-8 lg:px-12 py-14 mb-14;
+        @apply lg:gap-8 lg:px-12 py-20 mb-14;
     }
 
     .glassy-green {
