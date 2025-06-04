@@ -17,7 +17,7 @@
         </flux:navbar>
 
         <div class="flex-row-jstart-amid ml-auto mr-5 gap-2">
-            <flux:button class="active-btn" size="sm" variant="ghost"> Log In </flux:button>
+            <flux:button class="active-btn" wire:click="loginRedirect" size="sm" variant="ghost"> Log In </flux:button>
             <flux:button class="active-btn primary-btn" size="sm" variant="primary"> Sign Up </flux:button>
         </div>
     </div>
