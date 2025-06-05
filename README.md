@@ -1,1 +1,1 @@
-# KITA_Kiosk-Inventory---Transaction-App
+# KITA: Kiosk Inventory & Transaction App
