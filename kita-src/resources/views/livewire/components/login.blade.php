@@ -5,7 +5,7 @@
 
 
 <div class="flex-row-jstart-amid w-full">
-    <div class="flex-col-jcenter-astart justify-between h-screen">
+    <div class="flex-col-jcenter-astart justify-between h-screen hidden sm:flex">
         <button class="btn-logo active-btn">
             <img src="assets/kita-logo.png" alt="Kita Logo">
         </button>
@@ -16,11 +16,10 @@
     <div class="bg-styling flex-col-jcenter-acenter"
          style="background-image: url({{ asset('assets/curvy-dark-green-frame.svg') }})">
 
-        <form class="flex-col-jcenter-acenter gap-10 ml-16 w-1/2"
+        <form class="flex-col-jcenter-acenter form-layout"
               wire:submit="login">
 
             <h2 class="text-white"> Log in to your account.</h2>
-
 
             <flux:field>
                 <flux:label>Email</flux:label>

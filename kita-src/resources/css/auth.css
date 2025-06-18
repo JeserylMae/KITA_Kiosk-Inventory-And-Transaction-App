@@ -10,7 +10,7 @@
 
 @layer components {
     .bg-styling {
-        @apply w-2/3 h-screen bg-cover bg-left bg-no-repeat ml-auto mr-0;
+        @apply w-full sm:w-2/3 h-screen bg-cover bg-left bg-no-repeat ml-auto mr-0;
         @apply bg-[url('/assets/curvy-dark-green-frame.svg')];
     }
 
@@ -29,6 +29,10 @@
     }
 
     .welcome-img {
-        @apply w-md;
+        @apply w-md hidden md:flex;
+    }
+
+    .form-layout {
+        @apply gap-10 ml-0 sm:ml-16 w-3/4 lg:w-1/2;
     }
 }
