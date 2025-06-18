@@ -25,11 +25,11 @@
     <div class="content-wrapper px-0 py-3 sm:p-[1.25rem] md:my-14">
 
         <div class="content-wrapper glassy-green flex-col-jcenter-astart welcome-wrapper fade-on-entry-animation">
-            <h1 class="text-outline-bright-green">
+            <h1 class="text-outline-bright-green text">
                 Hi, We’re Kita — Your Smart Kiosk Companion
             </h1>
 
-            <h2 class="blurry-white">A Kiosk Inventory & Transaction Application.</h2>
+            <h2 class="blurry-white text">A Kiosk Inventory & Transaction Application.</h2>
 
             <p class="blurry-white">
                 Manage your Sari-Sari Store with ease using Kita, the all-in-one inventory and transaction app designed for small business owners. Track sales, monitory stocks, and streamline daily operation — all from your phone or tablet. Simple. Fast. Reliable.

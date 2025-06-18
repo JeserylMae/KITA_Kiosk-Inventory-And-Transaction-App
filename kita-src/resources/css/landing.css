@@ -50,4 +50,9 @@
     .display-img {
         @apply w-50 rounded-xs border-1 border-[var(--color-white-60)];
     }
+
+    [data-content],
+    [data-flux-icon] {
+        @apply !text-white !font-medium;
+    }
 }
