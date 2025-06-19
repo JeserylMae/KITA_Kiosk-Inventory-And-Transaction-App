@@ -9,9 +9,12 @@
 
 
 @layer components {
+    .curvy-frame-styling {
+        @apply absolute right-0 top-0 w-auto h-full object-cover z-0;
+    }
+
     .bg-styling {
-        @apply w-full sm:w-2/3 h-screen bg-cover bg-left bg-no-repeat ml-auto mr-0;
-        @apply bg-[url('/assets/curvy-dark-green-frame.svg')];
+        @apply relative w-full md:w-11/12 lg:w-2/3 h-screen ml-auto mr-0;
     }
 
     .small-text {
@@ -33,6 +36,6 @@
     }
 
     .form-layout {
-        @apply gap-10 ml-0 sm:ml-16 w-3/4 lg:w-1/2;
+        @apply gap-10 ml-0 sm:ml-16 w-3/4 lg:w-1/2 z-10;
     }
 }
