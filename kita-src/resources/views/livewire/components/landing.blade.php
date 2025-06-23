@@ -18,7 +18,7 @@
 
         <div class="flex-row-jstart-amid ml-auto mr-5 gap-2">
             <flux:button class="active-btn ghost-btn" wire:click="loginRedirect" size="sm" variant="ghost"> Log In </flux:button>
-            <flux:button class="active-btn primary-btn" size="sm" variant="primary"> Sign Up </flux:button>
+            <flux:button class="active-btn primary-btn" wire:click="registerRedirect" size="sm" variant="primary"> Sign Up </flux:button>
         </div>
     </div>
 
@@ -35,7 +35,7 @@
                 Manage your Sari-Sari Store with ease using Kita, the all-in-one inventory and transaction app designed for small business owners. Track sales, monitory stocks, and streamline daily operation — all from your phone or tablet. Simple. Fast. Reliable.
             </p>
 
-            <flux:button class="active-btn primary-btn" icon="rocket-launch" variant="primary">Join Now</flux:button>
+            <flux:button class="active-btn primary-btn" wire:click="registerRedirect" icon="rocket-launch" variant="primary">Join Now</flux:button>
         </div>
 
         <div id="about" class="flex-col-jcenter-astart pt-4 gap-5 fade-on-entry-animation"> 

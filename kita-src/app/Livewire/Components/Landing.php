@@ -17,6 +17,11 @@ class Landing extends Component
         return redirect()->to('/login');
     }
 
+    public function registerRedirect() 
+    {
+        return redirect()->to('/register');
+    }
+
     private function layoutData() 
     {
         return [

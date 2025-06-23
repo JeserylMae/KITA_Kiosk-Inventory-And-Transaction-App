@@ -52,7 +52,8 @@
     }
 
     [data-content],
-    [data-flux-icon] {
+    [data-flux-icon],
+    [data-flux-label] {
         @apply !text-white !font-medium;
     }
 }
