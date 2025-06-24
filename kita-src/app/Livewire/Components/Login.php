@@ -9,12 +9,7 @@ use Livewire\Attributes\Title;
 #[Layout('livewire.layout.app')]
 #[Title('Login | Kita')]
 class Login extends Component
-{    
-    public function landingRedirect() 
-    {
-        return redirect()->to('/');
-    }
-    
+{        
     public function render()
     {
         return view('livewire.components.login')

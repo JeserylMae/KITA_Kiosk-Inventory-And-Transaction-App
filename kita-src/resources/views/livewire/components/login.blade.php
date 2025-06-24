@@ -6,7 +6,7 @@
 
 <div class="flex-row-jstart-amid w-full">
     <div class="flex-col-jcenter-astart justify-between h-screen hidden md:flex">
-        <button class="btn-logo active-btn m-4" wire:click="landingRedirect">
+        <button class="btn-logo active-btn m-4" onClick="window.location.href='{{ route('landing') }}'">
             <img src="assets/kita-logo.png" alt="Kita Logo">
         </button>
 
@@ -34,7 +34,7 @@
 
                 <p class="small-text">
                     Don't have an account?
-                    <a href="/register"><u> Sign Up </u></a>
+                    <a href="{{ route('register') }}"><u> Sign Up </u></a>
                 </p>
             </div>
 
