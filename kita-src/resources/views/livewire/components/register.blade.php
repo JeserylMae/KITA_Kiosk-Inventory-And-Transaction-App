@@ -11,8 +11,15 @@
 
             @csrf
             @if (session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
+                <div 
+                    x-data="{ show: true }" 
+                    x-init="
+                        setTimeout(() => show = false, 3000)
+                        setTimeout(() => window.location.href = '/login', 3000)" 
+                    x-show="show"
+                    x-transition
+                    class="fixed top-15 left-80 bg-[var(--color-white-80)] text-black px-4 py-2 rounded-lg shadow-lg z-50 w-1/3">
+                    ✅ {{ session('success') }}
                 </div>
             @endif
 
