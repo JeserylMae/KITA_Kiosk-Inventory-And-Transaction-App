@@ -34,14 +34,14 @@ class StoreUserRequest extends FormRequest
     {
         if (in_array($this->route()->getActionMethod(), ['store'])){
             return [
-                'name' => 'required|string|max:255',
+                'name' => 'required|string|max:255|min:4',
                 'email'=> 'required|string|email|unique:users,email',
-                'password' => 'sometimes|nullable|string|min:8|max:25',
+                'password' => 'required|string|min:8|max:25|confirmed',
                 'addressId' => 'string|nullable|exists:address,id'
             ];
         }
         return [
-            'name' => 'sometimes|nullable|string|max:255',
+            'name' => 'sometimes|nullable|string|max:255|min:4',
             'email'=> 'sometimes|nullable|string|email|unique:users,email',
             'password' => 'sometimes|nullable|string|min:8|max:25',
             'addressId' => 'string|nullable|exists:address,id'
@@ -51,10 +51,14 @@ class StoreUserRequest extends FormRequest
     
     public function failedValidation(Validator $validator)
     {
-        throw new HttpResponseException(response()->json([
-            'success' => false,
-            'message' => 'Validation failed',
-            'errors' => $validator->errors()
-        ], 422));
+        throw new HttpResponseException(redirect()
+            ->back()
+            ->withErrors($validator)
+            ->withInput()
+            ->with([
+                'success' => false,
+                'message' => 'Validation failed',
+            ])
+        );
     }
 }
