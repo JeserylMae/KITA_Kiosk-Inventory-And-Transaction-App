@@ -40,7 +40,7 @@
 
                 <p class="small-text">
                     Don't have an account?
-                    <a href="/signup"><u> Sign Up </u></a>
+                    <a href="/register"><u> Sign Up </u></a>
                 </p>
             </div>
 
