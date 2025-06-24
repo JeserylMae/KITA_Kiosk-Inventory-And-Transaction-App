@@ -6,27 +6,39 @@
 <div class="flex-row-jstart-amid w-full">
     <div class="bg-styling flex-col-jcenter-acenter ml-0 mr-auto">
         <form class="flex-col-jcenter-acenter form-layout mr-0 sm:mr-16"
-              wire:submit.prevent="register">
+              method="POST"
+              action="{{ route('user.store') }}">
+
+            @csrf
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
             <h2 class="text-white">Create your account.</h2>
 
             <flux:field>
                 <flux:label>Name</flux:label>
-                <flux:input clearable/>
+                <flux:input name="name" clearable/>
+                <flux:error name="name" />
             </flux:field>
 
             <flux:field>
                 <flux:label>Email</flux:label>
-                <flux:input type="email" clearable/>
+                <flux:input name="email" type="email" clearable/>
+                <flux:error name="email" />
             </flux:field>
 
             <flux:field>
                 <flux:label>Password</flux:label>
-                <flux:input type="password" viewable/>
+                <flux:input name="password" type="password" viewable/>
+                <flux:error name="password" />
             </flux:field>
 
             <flux:field>
                 <flux:label>Confirm Password</flux:label>
-                <flux:input type="password" viewable/>
+                <flux:input name="password_confirmation" type="password" viewable/>
             </flux:field>
 
             <flux:field variant="inline">
@@ -44,7 +56,7 @@
                 </p>
             </div>
 
-            <flux:button class="primary-btn active-btn px-16 border-0 !rounded-full" :disabled="$isDisabled">Register</flux:button>
+            <flux:button class="primary-btn active-btn px-16 border-0 !rounded-full" type="submit" :disabled="$isDisabled">Register</flux:button>
         </form>
 
         <img class="curvy-frame-styling scale-x-[-1] left-0" src="{{ asset('assets/curvy-dark-green-frame.svg') }}" alt="curvy-frame-styling">
