@@ -6,7 +6,7 @@
 
 <div class="flex-row-jstart-amid w-full">
     <div class="flex-col-jcenter-astart justify-between h-screen hidden md:flex">
-        <button class="btn-logo active-btn" wire:click="landingRedirect">
+        <button class="btn-logo active-btn m-4" wire:click="landingRedirect">
             <img src="assets/kita-logo.png" alt="Kita Logo">
         </button>
 
@@ -30,7 +30,7 @@
             </flux:field>
 
             <flux:field variant="inline">
-                <flux:checkbox wire:model="terms" />
+                <flux:checkbox wire:model="terms" wire:change="termsAccepted"/>
                 <flux:label>I agree to the terms and conditions</flux:label>
                 <flux:error name="terms" />
             </flux:field>
@@ -44,7 +44,7 @@
                 </p>
             </div>
 
-            <flux:button class="primary-btn active-btn px-16 border-0 !rounded-full">Log In</flux:button>
+            <flux:button class="primary-btn active-btn px-16 border-0 !rounded-full" :disabled="$isDisabled">Log In</flux:button>
         </form>
         
         <img src="{{ asset('assets/curvy-dark-green-frame.svg') }}" class="curvy-frame-styling right-0">

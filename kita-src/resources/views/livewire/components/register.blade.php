@@ -5,7 +5,8 @@
 
 <div class="flex-row-jstart-amid w-full">
     <div class="bg-styling flex-col-jcenter-acenter ml-0 mr-auto">
-        <form class="flex-col-jcenter-acenter form-layout mr-0 sm:mr-16">
+        <form class="flex-col-jcenter-acenter form-layout mr-0 sm:mr-16"
+              wire:submit.prevent="register">
             <h2 class="text-white">Create your account.</h2>
 
             <flux:field>
@@ -29,7 +30,7 @@
             </flux:field>
 
             <flux:field variant="inline">
-                <flux:checkbox wire:model="terms"/>
+                <flux:checkbox wire:model="terms" wire:change="termsAccepted"/>
                 <flux:label> I agree to the terms and conditions. </flux:label>
                 <flux:error name="terms"/>
             </flux:field>
@@ -43,7 +44,7 @@
                 </p>
             </div>
 
-            <flux:button class="primary-btn active-btn px-16 border-0 !rounded-full">Register</flux:button>
+            <flux:button class="primary-btn active-btn px-16 border-0 !rounded-full" :disabled="$isDisabled">Register</flux:button>
         </form>
 
         <img class="curvy-frame-styling scale-x-[-1] left-0" src="{{ asset('assets/curvy-dark-green-frame.svg') }}" alt="curvy-frame-styling">
