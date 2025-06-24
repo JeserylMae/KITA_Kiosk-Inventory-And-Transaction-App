@@ -11,6 +11,11 @@ use Livewire\Attributes\Title;
 #[Title('Sign Up | Kita')]
 class Register extends Component
 {
+    public function landingRedirect() 
+    {
+        return redirect()->to('/');
+    }
+
     private function layoutData() 
     {
         return [
