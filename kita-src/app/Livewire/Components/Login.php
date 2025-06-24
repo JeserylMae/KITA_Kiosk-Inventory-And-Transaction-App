@@ -9,18 +9,7 @@ use Livewire\Attributes\Title;
 #[Layout('livewire.layout.app')]
 #[Title('Login | Kita')]
 class Login extends Component
-{
-    public bool $terms = false;
-    public bool $isDisabled = true;
-
-    public function termsAccepted() 
-    {
-        if ($this->terms) {
-            return $this->isDisabled = false;
-        }
-        return $this->isDisabled = true;
-    }
-    
+{    
     public function landingRedirect() 
     {
         return redirect()->to('/');

@@ -29,12 +29,6 @@
                 <flux:input type="password" viewable/>
             </flux:field>
 
-            <flux:field variant="inline">
-                <flux:checkbox wire:model="terms" wire:change="termsAccepted"/>
-                <flux:label>I agree to the terms and conditions</flux:label>
-                <flux:error name="terms" />
-            </flux:field>
-
             <div class="w-full gap-2 flex-col-jcenter-acenter items-end">
                 <hr class="w-full border-white">
 
@@ -44,7 +38,7 @@
                 </p>
             </div>
 
-            <flux:button class="primary-btn active-btn px-16 border-0 !rounded-full" :disabled="$isDisabled">Log In</flux:button>
+            <flux:button class="primary-btn active-btn px-16 border-0 !rounded-full">Log In</flux:button>
         </form>
         
         <img src="{{ asset('assets/curvy-dark-green-frame.svg') }}" class="curvy-frame-styling right-0">
