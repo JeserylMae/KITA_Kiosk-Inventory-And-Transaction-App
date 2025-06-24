@@ -40,7 +40,7 @@
 
                 <p class="small-text">
                     Already have an account?
-                    <a href=""><u> Sign In </u></a>
+                    <a href="/login"><u> Sign In </u></a>
                 </p>
             </div>
 
