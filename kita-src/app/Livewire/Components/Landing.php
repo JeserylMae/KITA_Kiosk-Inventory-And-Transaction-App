@@ -12,16 +12,6 @@ use function Livewire\Volt\layout;
 #[Title('Kita')]
 class Landing extends Component
 {
-    public function loginRedirect() 
-    {
-        return redirect()->to('/login');
-    }
-
-    public function registerRedirect() 
-    {
-        return redirect()->to('/register');
-    }
-
     private function layoutData() 
     {
         return [

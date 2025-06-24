@@ -13,12 +13,7 @@ class Register extends Component
 {
     public bool $terms = false;
     public bool $isDisabled = true;
-
-    public function landingRedirect() 
-    {
-        return redirect()->to('/');
-    }
-
+    
     public function termsAccepted()
     {
         if ($this->terms) {

@@ -59,7 +59,7 @@
 
                 <p class="small-text">
                     Already have an account?
-                    <a href="/login"><u> Sign In </u></a>
+                    <a href="{{ route('login') }}"><u> Sign In </u></a>
                 </p>
             </div>
 
@@ -70,7 +70,7 @@
     </div>
 
     <div class="flex-col-jcenter-astart justify-between h-screen hidden md:flex">
-        <button class="btn-logo active-btn self-end m-4" wire:click="landingRedirect">
+        <button class="btn-logo active-btn self-end m-4" onClick="window.location.href='{{ route('landing') }}'">
             <img src="assets/kita-logo.png" alt="Kita Logo">
         </button>
 
