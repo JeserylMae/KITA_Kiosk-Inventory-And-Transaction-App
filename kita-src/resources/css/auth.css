@@ -29,6 +29,10 @@
         input {
             @apply !border-white !border-1 !rounded-full;
         }
+        input[type="password"]::-ms-reveal,
+        input[type="password"]::-ms-clear {
+        display: none;
+        }
     }
 
     .welcome-img {
