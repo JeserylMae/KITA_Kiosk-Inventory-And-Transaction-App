@@ -3,7 +3,7 @@
     @vite(['resources/css/auth.css'])
 @endpush 
 
-<div class="flex-row-jstart-amid w-full">
+<div class="flex-row-jstart-amid w-full fade-on-entry-animation">
     <div class="bg-styling flex-col-jcenter-acenter ml-0 mr-auto">
         <form class="flex-col-jcenter-acenter form-layout mr-0 sm:mr-16"
               method="POST"

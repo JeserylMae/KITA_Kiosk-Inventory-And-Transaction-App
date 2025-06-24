@@ -4,7 +4,7 @@
 @endpush
 
 
-<div class="flex-row-jstart-amid w-full">
+<div class="flex-row-jstart-amid w-full fade-on-entry-animation">
     <div class="flex-col-jcenter-astart justify-between h-screen hidden md:flex">
         <button class="btn-logo active-btn m-4" onClick="window.location.href='{{ route('landing') }}'">
             <img src="assets/kita-logo.png" alt="Kita Logo">
