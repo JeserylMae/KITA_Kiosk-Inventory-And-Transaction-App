@@ -3,26 +3,23 @@
     @vite(['resources/css/auth.css'])
 @endpush 
 
-<div class="flex-row-jstart-amid w-full fade-on-entry-animation">
+<div class="flex-row-jstart-amid w-full h-full fade-on-entry-animation">
     <div class="bg-styling flex-col-jcenter-acenter ml-0 mr-auto">
         <form class="flex-col-jcenter-acenter form-layout mr-0 sm:mr-16"
               method="POST"
-              action="{{ route('user.store') }}">
+              action="{{ route('user.signup') }}">
 
             @csrf
             @if (session('success'))
-                <div 
-                    x-data="{ show: true }" 
-                    x-init="
-                        setTimeout(() => show = false, 3000)
-                        setTimeout(() => window.location.href = '/login', 3000)" 
-                    x-show="show"
-                    x-transition
-                    class="fixed top-15 left-80 bg-[var(--color-white-80)] text-black px-4 py-2 rounded-lg shadow-lg z-50 w-1/3">
-                    ✅ {{ session('success') }}
-                </div>
+            <flux:callout variant="success" icon="check-circle" heading="{{ session('success') }}"
+                          class="w-100 bg-transparent"
+                          x-data="{ show: true }" 
+                          x-init="setTimeout(() => show = false, 3000)
+                                  setTimeout(() => window.location.href = '/dashboard', 3000)" 
+                          x-show="show"
+                          x-transition/>
             @endif
-
+            
             <h2 class="text-white">Create your account.</h2>
 
             <flux:field>
