@@ -5,6 +5,7 @@ namespace App\Livewire\Components;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
+use App\Livewire\Layouts\GeneralSettings;
 
 
 #[Layout('livewire.layout.app')]
@@ -25,13 +26,6 @@ class Register extends Component
     public function render()
     {
         return view('livewire.components.register')
-        ->layoutData($this->layoutData());
-    }
-
-    private function layoutData() 
-    {
-        return [
-            'bgImgUrl' => asset('assets/bg-landing.jpeg')
-        ];
+             ->layoutData(GeneralSettings::layoutData());
     }
 }

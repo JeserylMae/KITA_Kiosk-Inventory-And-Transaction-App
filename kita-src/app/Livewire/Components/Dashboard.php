@@ -7,13 +7,14 @@ use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use App\Livewire\Layouts\GeneralSettings;
 
-#[Layout('livewire.layout.app')]
-#[Title('Login | Kita')]
-class Login extends Component
-{        
+
+#[Layout('layouts.app')]
+#[Title('Kita')]
+class Dashboard extends Component
+{
     public function render()
     {
-        return view('livewire.components.login')
-        ->layoutData(GeneralSettings::layoutData());
+        return view('livewire.components.dashboard')
+             ->layoutData(GeneralSettings::layoutData());
     }
 }
