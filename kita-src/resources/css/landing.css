@@ -51,6 +51,12 @@
         @apply w-50 rounded-xs border-1 border-[var(--color-white-60)];
     }
 
+    [data-current],
+    [data-flux-button] {
+        @apply !text-white !font-normal;
+        font-family: var(--font-instrument) !important;
+    }
+
     [data-content],
     [data-flux-icon],
     [data-flux-label] {

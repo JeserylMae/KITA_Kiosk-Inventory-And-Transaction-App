@@ -62,7 +62,7 @@
     }
 
     .primary-btn {
-        @apply !text-black !bg-[var(--color-bright-green-80)] hover:!bg-[var(--color-bright-green-50)];
+        @apply !text-white !bg-[var(--color-bright-green-80)] hover:!bg-[var(--color-bright-green-50)];
         font-family: var(--font-instrument) !important;
     }
 
@@ -107,11 +107,5 @@
 
     .flex-col-jcenter-acenter {
         @apply flex flex-col justify-center items-center;
-    }
-    
-    [data-current],
-    [data-flux-button] {
-        @apply !text-white !font-normal;
-        font-family: var(--font-instrument) !important;
     }
 }

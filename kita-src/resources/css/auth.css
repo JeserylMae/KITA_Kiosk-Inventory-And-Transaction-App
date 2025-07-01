@@ -42,4 +42,8 @@
     .form-layout {
         @apply relative gap-10 w-3/4 lg:w-1/2 !z-10;
     }
+
+    [data-flux-label] {
+        @apply !text-white !font-medium;
+    }
 }
