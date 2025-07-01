@@ -8,7 +8,7 @@ use Livewire\Attributes\Title;
 use App\Livewire\Layouts\GeneralSettings;
 
 
-#[Layout('layouts.app')]
+#[Layout('livewire.layout.app')]
 #[Title('Kita')]
 class Dashboard extends Component
 {
