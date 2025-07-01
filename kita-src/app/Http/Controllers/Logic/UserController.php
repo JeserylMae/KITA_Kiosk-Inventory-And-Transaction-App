@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\StoreUserRequest;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 
 class UserController extends Controller
@@ -16,22 +17,28 @@ class UserController extends Controller
     public function index() 
     {
         $users = User::all();
-        return response()->json($users);
+        return response()->json([
+            'message' => 'Users retrieved successfully',
+            'users' => $users
+        ]);
     }
 
     public function me() { return response()->json(Auth::user()); }
 
-    public function store(StoreUserRequest $request): RedirectResponse 
+    public function store(StoreUserRequest $request) 
     {
         $validated = $request->validated();
         $validated['password'] = bcrypt($validated['password']);
 
-        User::create($validated);
+        $user = User::create($validated);
 
-        return back()->with('success', 'User created successfully');
+        return response()->json([
+            'message' => 'User created successfully',
+            'user' => $user
+        ], 201);
     }
 
-    public function update(StoreUserRequest $request, User $user): RedirectResponse 
+    public function update(StoreUserRequest $request, User $user) 
     {
         $validated = $request->validated();
 
@@ -40,15 +47,18 @@ class UserController extends Controller
         }
         $user->update($validated);
 
-        return redirect()->route('user.index')
-                         ->with('success', 'User was updated successfully.');
+        return response()->json([
+            'message' => 'User updated successfully',
+            'user' => $user
+        ]);
     }
 
-    public function destroy(User $user): RedirectResponse 
+    public function destroy(User $user) 
     {
         $user->delete();
 
-        return redirect()->route('user.index')
-                         ->with('success', 'User was successfully deleted.');
+        return response()->json([
+            'message' => 'User deleted successfully'
+        ]);
     }
 }
