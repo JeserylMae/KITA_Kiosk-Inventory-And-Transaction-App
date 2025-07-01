@@ -23,7 +23,7 @@ Route::get('/csrf-token', function () {
 });
 
 Route::get('/email/verify', function () {
-    return view('auth.verify-email'); // You can customize this Blade view
+    return view('auth.verify-email'); 
 })->middleware('auth')->name('verification.notice');
 
 
@@ -40,6 +40,8 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('auth/signup', 'signup')->name('user.signup');
+    Route::post('auth/login', 'login')->name('user.login');
+    Route::post('auth/logout', 'logout')->name('user.logout');
 });
 
 require base_path('routes/Logic/UserRoute.php');
