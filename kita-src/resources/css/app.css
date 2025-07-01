@@ -18,6 +18,7 @@
         --color-bright-green-50:    rgba(123, 204, 24, 0.5);
         --color-white-80:           rgba(255, 255, 255, 0.8);
         --color-white-60:           rgba(255, 255, 255, 0.6);
+        --color-white-30:           rgba(255, 255, 255, 0.3);
         --color-white-5:            rgba(255, 255, 255, 0.05);
         
         --font-instrument: 'Instrument Sans', var(--font-sans);
