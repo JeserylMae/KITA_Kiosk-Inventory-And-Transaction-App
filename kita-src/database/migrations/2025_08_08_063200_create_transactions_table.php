@@ -16,8 +16,8 @@ return new class extends Migration
             $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('user_id');
             $table->dateTime('transaction_datetime');
-            $table->double('selling_price');
-            $table->double('purchase_price');
+            $table->decimal('selling_price', 12, 3);
+            $table->decimal('purchase_price', 12, 3);
             $table->integer('quantity');
             $table->string('transaction_type');
 
