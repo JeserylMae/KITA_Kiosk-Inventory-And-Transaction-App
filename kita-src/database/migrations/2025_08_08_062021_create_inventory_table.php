@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('seller_id');
             $table->unsignedBigInteger('product_id');
             $table->integer('quantity', false, true);
-            $table->double('selling_price');
+            $table->decimal('selling_price', 12, 3);
             $table->dateTime('expiry_date');
 
             $table->foreign('seller_id')->references('id')->on('users');
