@@ -9,57 +9,9 @@
 
 
 @layer utilities {
-    .text-outline-bright-green {
-    text-shadow:
-        -2px -2px 0 var(--color-bright-green-80),
-        2px -2px 0 var(--color-bright-green-80),
-        -2px  2px 0 var(--color-bright-green-80),
-        2px  2px 0 var(--color-bright-green-80);
-    }
+
 }
 
 @layer components {
-    .navbar-wrapper {
-        @apply gap-8 rounded-full w-full h-max bg-none sm:bg-[var(--color-dark-green-80)];
-    }
-
-    .navbar-wrapper [data-flux-navbar] {
-        @apply !hidden md:!flex;
-    }
-
-    [data-current] {
-        @apply !text-white mr-5 active:!border-b-2 active:!border-white;
-    }
-    
-    .content-wrapper {
-        @apply p-[1.25rem] h-max sm:mx-0 md:max-w-[90%] xl:max-w-[70%] flex flex-col gap-4;
-    }
-
-    .welcome-wrapper {
-        @apply lg:gap-8 lg:px-12 py-20 mb-14;
-    }
-
-    .glassy-green {
-        @apply bg-[var(--color-dark-green-25)] border-[var(--color-dark-green)] border-4 rounded-3xl backdrop-blur-sm sm:mx-4;
-    }
-    
-    .blurry-white {
-        @apply bg-[var(--color-white-60)] backdrop-blur-2xl p-3 rounded-[var(--radius-xs)];
-    }
-
-    .display-img {
-        @apply w-50 rounded-xs border-1 border-[var(--color-white-60)];
-    }
-
-    [data-current],
-    [data-flux-button] {
-        @apply !text-white !font-normal;
-        font-family: var(--font-instrument) !important;
-    }
-
-    [data-content],
-    [data-flux-icon],
-    [data-flux-label] {
-        @apply !text-white !font-medium;
-    }
+   
 }
