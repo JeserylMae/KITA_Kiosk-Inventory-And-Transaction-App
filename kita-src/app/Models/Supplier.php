@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Supplier extends Model
+{
+    public $timestamps = false;
+
+    /**
+     * The attributes that are mass assignable.
+     * 
+     * @var list<string>
+     */
+    protected $fillable = [
+        'last_name',
+        'first_name',
+        'middle_name',
+        'house_number',
+        'street',
+        'barangay',
+        'city',
+        'postal_code',
+        'province',
+        'email',
+        'contact_number',
+    ];
+}
