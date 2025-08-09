@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\ProductCategory;
 use App\Models\Inventory;
+use App\Models\ProductSupplier;
 
 class Product extends Model
 {
@@ -27,5 +28,10 @@ class Product extends Model
     public function inventory()
     {
         return $this->hasMany(Inventory::class, 'product_id');
+    }
+
+    public function productSupplier()
+    {
+        return $this->hasMany(ProductSupplier::class, 'product_id');
     }
 }
