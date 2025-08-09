@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 use App\Models\Inventory;
 use App\Models\ProductSupplier;
 use App\Models\Transaction;
+use App\Models\Delivery;
 
 class User extends Authenticatable
 {
@@ -88,5 +89,10 @@ class User extends Authenticatable
     public function transaction()
     {
         return $this->hasMany(Transaction::class, 'user_id');
+    }
+
+    public function delivery()
+    {
+        return $this->hasMany(Delivery::class, 'seller_id');
     }
 }
