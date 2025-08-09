@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class SupplierRequest extends FormRequest
 {
@@ -50,5 +52,18 @@ class SupplierRequest extends FormRequest
             'email' => 'nullable|email|max:100|unique:suppliers,email' . ($supplierId ?? 'NULL'),
             'contact_number' => 'nullable|string|regex:/^(09\d{9}|\+639\d{9})$/|unique:suppliers,contact_number' . ($supplierId ?? 'NULL'),
         ];
+    }
+
+    public function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(redirect()
+            ->back()
+            ->withErrors($validator)
+            ->withInput()
+            ->with([
+                'success' => false,
+                'message' => 'Validation failed.',
+            ])
+        );
     }
 }
