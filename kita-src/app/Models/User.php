@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
 use App\Models\Inventory;
+use App\Models\ProductSupplier;
 
 class User extends Authenticatable
 {
@@ -76,5 +77,10 @@ class User extends Authenticatable
     public function inventory()
     {
         return $this->hasMany(Inventory::class, 'seller_id');
+    }
+
+    public function productSupplier()
+    {
+        return $this->hasMany(productSupplier::class, 'seller_id');
     }
 }
