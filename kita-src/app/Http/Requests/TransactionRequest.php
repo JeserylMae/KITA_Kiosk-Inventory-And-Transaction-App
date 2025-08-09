@@ -3,6 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Contracts\Validation\Validator;
 
 class TransactionRequest extends FormRequest
 {
@@ -41,5 +44,18 @@ class TransactionRequest extends FormRequest
             'quantity' => 'nullable|integer|min:0',
             'transaction_type' => 'mullable|string|min:4|max:10',
         ];
+    }
+
+    public function failedValidation(Validator $validator): RedirectResponse
+    {
+        throw new HttpResponseException(redirect()
+            ->back()
+            ->withErrors($validator)
+            ->withInput()
+            ->with([
+                'success' => false,
+                'message' => 'Validation failed.'
+            ])
+        );
     }
 }
