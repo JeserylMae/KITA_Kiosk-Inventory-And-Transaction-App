@@ -50,7 +50,7 @@ class InventoryRequest extends FormRequest
     {
         throw new HttpResponseException(redirect()
             ->back()
-            ->withErrors()
+            ->withErrors($validator)
             ->withInput()
             ->with([
                 'success' => false,
