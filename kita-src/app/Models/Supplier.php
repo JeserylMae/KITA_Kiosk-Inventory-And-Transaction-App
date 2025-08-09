@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\ProductSupplier;
 
 class Supplier extends Model
 {
@@ -26,4 +27,9 @@ class Supplier extends Model
         'email',
         'contact_number',
     ];
+
+    public function productSupplier()
+    {
+        return $this->hasMany(ProductSupplier::class, 'supplier_id');
+    }
 }
