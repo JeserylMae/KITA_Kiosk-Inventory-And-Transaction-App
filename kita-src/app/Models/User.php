@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
+use App\Models\Inventory;
+use App\Models\ProductSupplier;
+use App\Models\Transaction;
+use App\Models\Delivery;
 
 class User extends Authenticatable
 {
@@ -19,9 +23,23 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
+        'last_name',
+        'first_name',
+        'middle_name',
+
+        'house_number',
+        'street',
+        'barangay',
+        'city',
+        'postal_code',
+        'province',
+
+        'store_name',
+        'role',
+
         'email',
         'password',
+        'contact_number',
     ];
 
     /**
@@ -56,5 +74,25 @@ class User extends Authenticatable
             ->explode(' ')
             ->map(fn (string $name) => Str::of($name)->substr(0, 1))
             ->implode('');
+    }
+
+    public function inventory()
+    {
+        return $this->hasMany(Inventory::class, 'seller_id');
+    }
+
+    public function productSupplier()
+    {
+        return $this->hasMany(productSupplier::class, 'seller_id');
+    }
+
+    public function transaction()
+    {
+        return $this->hasMany(Transaction::class, 'user_id');
+    }
+
+    public function delivery()
+    {
+        return $this->hasMany(Delivery::class, 'seller_id');
     }
 }
