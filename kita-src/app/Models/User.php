@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
 use App\Models\Inventory;
 use App\Models\ProductSupplier;
+use App\Models\Transaction;
 
 class User extends Authenticatable
 {
@@ -82,5 +83,10 @@ class User extends Authenticatable
     public function productSupplier()
     {
         return $this->hasMany(productSupplier::class, 'seller_id');
+    }
+
+    public function transaction()
+    {
+        return $this->hasMany(Transaction::class, 'user_id');
     }
 }
