@@ -32,7 +32,7 @@ class SupplierRequest extends FormRequest
                 'city' => 'required|string|min:4|max:50',
                 'postal_code' => 'required|string|digits:4',
                 'email' => 'required|email|max:100|unique:suppliers,email',
-                'contact_number' => 'required|unique|string|regex:/^(09\d{9}|\+639\d{9})$/',
+                'contact_number' => 'required|string|regex:/^(09\d{9}|\+639\d{9})$/|unique:suppliers,contact_number',
             ];
         }
 
@@ -48,7 +48,7 @@ class SupplierRequest extends FormRequest
             'city' => 'nullable|string|min:4|max:50',
             'postal_code' => 'nullable|string|digits:4',
             'email' => 'nullable|email|max:100|unique:suppliers,email' . ($supplierId ?? 'NULL'),
-            'contact_number' => 'nullable|unique|string|regex:/^(09\d{9}|\+639\d{9})$/',
+            'contact_number' => 'nullable|string|regex:/^(09\d{9}|\+639\d{9})$/|unique:suppliers,contact_number' . ($supplierId ?? 'NULL'),
         ];
     }
 }
