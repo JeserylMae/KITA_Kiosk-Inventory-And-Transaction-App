@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\ProductSupplier;
+use App\Models\Delivery;
 
 class Supplier extends Model
 {
@@ -31,5 +32,10 @@ class Supplier extends Model
     public function productSupplier()
     {
         return $this->hasMany(ProductSupplier::class, 'supplier_id');
+    }
+
+    public function delivery()
+    {
+        return $this->hasMany(Delivery::class, 'supplier_id');
     }
 }
