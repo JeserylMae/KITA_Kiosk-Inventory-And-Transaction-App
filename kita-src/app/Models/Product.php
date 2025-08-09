@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\ProductCategory;
 use App\Models\Inventory;
 use App\Models\ProductSupplier;
+use App\Models\Transaction;
 
 class Product extends Model
 {
@@ -33,5 +34,10 @@ class Product extends Model
     public function productSupplier()
     {
         return $this->hasMany(ProductSupplier::class, 'product_id');
+    }
+
+    public function transaction()
+    {
+        return $this->hasMany(Transaction::class, 'product_id');
     }
 }
