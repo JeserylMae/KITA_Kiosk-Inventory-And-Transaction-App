@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
+use App\Models\Product;
 
 class Transaction extends Model
 {
@@ -35,11 +37,11 @@ class Transaction extends Model
 
     public function user()
     {
-        return $this->belongsTo('users');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function product()
     {
-        return $this->belongsTo('products');
+        return $this->belongsTo(Product::class, 'product_id');
     }
 }
