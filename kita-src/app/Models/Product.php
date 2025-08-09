@@ -7,6 +7,7 @@ use App\Models\ProductCategory;
 use App\Models\Inventory;
 use App\Models\ProductSupplier;
 use App\Models\Transaction;
+use App\Models\Delivery;
 
 class Product extends Model
 {
@@ -39,5 +40,10 @@ class Product extends Model
     public function transaction()
     {
         return $this->hasMany(Transaction::class, 'product_id');
+    }
+
+    public function delivery()
+    {
+        return $this->hasMany(Delivery::class, 'product_id');
     }
 }
