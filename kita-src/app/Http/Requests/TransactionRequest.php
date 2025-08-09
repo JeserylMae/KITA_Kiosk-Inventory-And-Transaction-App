@@ -9,10 +9,10 @@ class TransactionRequest extends FormRequest
     /**
      * Determine if the user is authorized to make this request.
      */
-    public function authorize(): bool
-    {
-        return false;
-    }
+    // public function authorize(): bool
+    // {
+    //     return false;
+    // }
 
     /**
      * Get the validation rules that apply to the request.
@@ -21,8 +21,25 @@ class TransactionRequest extends FormRequest
      */
     public function rules(): array
     {
+        if(in_array($this->route()->getActionMethod(), ['store'])){
+            return [
+                'product_id' => 'required|integer|exists:products,id',
+                'user_id' => 'required|integer|exists:users,id',
+                'transaction_datetime' => 'required|date_format:Y-m-d H:i:s',
+                'selling_price' => 'required|float|min:0',
+                'purchase_price' => 'required|float|min:0',
+                'quantity' => 'required|integer|min:0',
+                'transaction_type' => 'required|string|min:4|max:10',
+            ];
+        }
         return [
-            //
+            'product_id' => 'nullable|integer|exists:products,id',
+            'user_id' => 'nullable|integer|exists:users,id',
+            'transaction_datetime' => 'nullable|date_format:Y-m-d H:i:s',
+            'selling_price' => 'nullable|float|min:0',
+            'purchase_price' => 'nullable|float|min:0',
+            'quantity' => 'nullable|integer|min:0',
+            'transaction_type' => 'mullable|string|min:4|max:10',
         ];
     }
 }
