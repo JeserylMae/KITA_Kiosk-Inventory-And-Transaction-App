@@ -31,7 +31,7 @@ class ProductCategoryRequest extends FormRequest
         $productCategoryId = $this->route('productCategory')?->id;
 
         return [
-            'name' => 'nullable|string|min:2|max:25|unique:product_categories,name' . ($productCategoryId ?? 'NULL'),
+            'name' => 'nullable|string|min:2|max:25|unique:product_categories,name,' . ($productCategoryId ?? 'NULL'),
             'brand' => 'nullable|string|min:2|max:25',
         ];
     }

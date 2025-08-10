@@ -59,8 +59,8 @@ class StoreUserRequest extends FormRequest
             'barangay' => 'nullable|string|max:50',
             'city' => 'nullable|string|min:4|max:50',
             'postal_code' => 'nullable|string|digits:4',
-            'email' => 'nullable|email|max:100|unique:users,email' . ($userId ?? 'NULL'),
-            'contact_number' => 'nullable|string|regex:/^(09\d{9}|\+639\d{9})$/|unique:users,contact_number' . ($userId ?? 'NULL'),
+            'email' => 'nullable|email|max:100|unique:users,email,' . ($userId ?? 'NULL'),
+            'contact_number' => 'nullable|string|regex:/^(09\d{9}|\+639\d{9})$/|unique:users,contact_number,' . ($userId ?? 'NULL'),
             'password' => 'nullable|string|min:8|max:25|confirmed',
         ];
     }
