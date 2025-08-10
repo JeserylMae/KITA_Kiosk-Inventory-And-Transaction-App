@@ -16,9 +16,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class UserController extends Controller
 {
     public function index() 
-    {
-        Gate::authorize('admin-only');
-        
+    {       
         $users = User::all();
         
         return response()->json([
