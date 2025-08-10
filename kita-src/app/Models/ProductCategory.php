@@ -7,6 +7,8 @@ use App\Models\Product;
 
 class ProductCategory extends Model
 {
+    public $timestamps = false;
+    
     /**
      * The attributes that are mass assinable.
      * 
