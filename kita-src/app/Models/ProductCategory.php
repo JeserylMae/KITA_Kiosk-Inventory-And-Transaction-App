@@ -7,6 +7,8 @@ use App\Models\Product;
 
 class ProductCategory extends Model
 {
+    public $timestamps = false;
+    
     /**
      * The attributes that are mass assinable.
      * 
@@ -15,6 +17,7 @@ class ProductCategory extends Model
     protected $fillable = [
         'name',
         'description',
+        'created_by',
     ];
 
     public function product()

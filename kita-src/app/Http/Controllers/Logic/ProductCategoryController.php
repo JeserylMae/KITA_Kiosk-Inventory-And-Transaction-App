@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Logic;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductCategoryRequest;
 use App\Models\ProductCategory;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class ProductCategoryController extends Controller
 {
@@ -33,6 +33,8 @@ class ProductCategoryController extends Controller
 
     public function update(ProductCategoryRequest $request, ProductCategory $productCategory)
     {
+        Gate::authorize('manage-owned', $productCategory);
+
         $validated = $request->validated();
 
         $productCategory->update($validated);
@@ -44,6 +46,8 @@ class ProductCategoryController extends Controller
 
     public function destroy(ProductCategory $productCategory)
     {
+        Gate::authorize('manage-owned', $productCategory);
+
         $productCategory->delete();
 
         return response()->json([
