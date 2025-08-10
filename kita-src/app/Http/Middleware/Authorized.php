@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+
 class Authorized
 {
     /**
@@ -15,9 +16,16 @@ class Authorized
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ( !auth()->check() ) {
-            return abort(403);
+        if ( !auth()->check() ) { return abort(403); }
+
+        if ( in_array($request->route()->getActionMethod(), ['destroy']) ) 
+        {
+            if ( auth()->user()->hasRole('cashier') ) 
+                {
+                return abort(403);
+            }
         }
+
         return $next($request);
     }
 }
