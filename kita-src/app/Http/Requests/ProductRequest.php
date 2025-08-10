@@ -36,13 +36,15 @@ class ProductRequest extends FormRequest
             return [
                 'name' => 'required|string|max:100',
                 'brand' => 'required|string|max:150',
-                'category_id' => 'required|string|exists:product_categories,id'
+                'category_id' => 'required|string|exists:product_categories,id',
+                'created_by' => 'required|exists:users,id'
             ];
         }
         return [
             'name' => 'nullable|string|max:100',
             'brand' => 'nullable|string|max:150',
-            'category_id' => 'nullable|string|exists:product_categories,id'
+            'category_id' => 'nullable|string|exists:product_categories,id',
+            'created_by' => 'nullable|exists:users,id'
         ];
     }
 
