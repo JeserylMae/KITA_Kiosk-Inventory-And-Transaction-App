@@ -9,9 +9,12 @@ Route::controller(SupplierController::class)->group(function ()
 {
     Route::middleware(['auth', 'verified'])->group(function ()
     {
-        Route::get('/suppliers', 'index')->name('supplier.index');
-        Route::post('/suppliers', 'store')->name('supplier.store');
-        Route::patch('/suppliers/{supplier}', 'update')->name('supplier.update');
-        Route::delete('/suppliers/{supplier}', 'destroy')->name('supplier.destroy');
+        Route::get('/suppliers', 'index')->middleware('role:admin')->name('supplier.index');
+
+        Route::middleware(['role:admin,seller'])->group(function () {
+            Route::post('/suppliers', 'store')->name('supplier.store');
+            Route::patch('/suppliers/{supplier}', 'update')->name('supplier.update');
+            Route::delete('/suppliers/{supplier}', 'destroy')->name('supplier.destroy');
+        });
     });
 });
