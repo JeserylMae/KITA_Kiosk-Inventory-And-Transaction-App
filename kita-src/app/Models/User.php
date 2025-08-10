@@ -95,4 +95,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Delivery::class, 'seller_id');
     }
+
+    public function hasRole(string $role)
+    {
+        return $this->role === $role;
+    }
 }
