@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Logic;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TransactionRequest;
 use App\Models\Transaction;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class TransactionController extends Controller
 {
@@ -44,6 +44,8 @@ class TransactionController extends Controller
 
     public function delete(Transaction $transaction)
     {
+        Gate::authorize('manage-owned', $transaction);
+
         $transaction->delete();
 
         return response()->json([
