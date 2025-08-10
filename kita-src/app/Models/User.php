@@ -95,4 +95,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Delivery::class, 'seller_id');
     }
+
+    public function hasAnyRole(...$roles)
+    {
+        return in_array($this->role, $roles, true);
+    }
 }
