@@ -12,18 +12,18 @@ class StoreUserRequest extends FormRequest
     /**
      * Determine if the user is authorized to make this request.
      */
-    public function authorize(): bool
-    {
-        if (in_array($this->route()->getActionMethod(), ['destroy'])) 
-        {
-            if (!Auth::check()) 
-            {
-                return false;
-            }
-            return Auth::id() == $this->user->id;
-        }
-        return true;
-    }
+    // public function authorize(): bool
+    // {
+    //     if (in_array($this->route()->getActionMethod(), ['destroy'])) 
+    //     {
+    //         if (!Auth::check()) 
+    //         {
+    //             return false;
+    //         }
+    //         return Auth::id() == $this->user->id;
+    //     }
+    //     return true;
+    // }
 
     /**
      * Get the validation rules that apply to the request.
@@ -34,17 +34,34 @@ class StoreUserRequest extends FormRequest
     {
         if (in_array($this->route()->getActionMethod(), ['store'])){
             return [
-                'name' => 'required|string|max:255|min:4',
-                'email'=> 'required|string|email|unique:users,email',
+                'last_name' => 'required|string|min:2|max:25',
+                'first_name' => 'required|string|min:2|max:25',
+                'middle_name' => 'nullable|string|min:2|max:25',
+                'house_number' => 'nullable|string|min:0|max:6',
+                'street' => 'nullable|string|max:50',
+                'barangay' => 'nullable|string|max:50',
+                'city' => 'required|string|min:4|max:50',
+                'postal_code' => 'required|string|digits:4',
+                'email' => 'required|email|max:100|unique:users,email',
+                'contact_number' => 'required|string|regex:/^(09\d{9}|\+639\d{9})$/|unique:users,contact_number',
                 'password' => 'required|string|min:8|max:25|confirmed',
-                'addressId' => 'string|nullable|exists:address,id'
             ];
         }
+
+        $userId = $this->route('user')?->id;
+
         return [
-            'name' => 'sometimes|nullable|string|max:255|min:4',
-            'email'=> 'sometimes|nullable|string|email|unique:users,email',
-            'password' => 'sometimes|nullable|string|min:8|max:25',
-            'addressId' => 'string|nullable|exists:address,id'
+            'last_name' => 'nullable|string|min:2|max:25',
+            'first_name' => 'nullable|string|min:2|max:25',
+            'middle_name' => 'nullable|string|min:2|max:25',
+            'house_number' => 'nullable|string|min:0|max:6',
+            'street' => 'nullable|string|max:50',
+            'barangay' => 'nullable|string|max:50',
+            'city' => 'nullable|string|min:4|max:50',
+            'postal_code' => 'nullable|string|digits:4',
+            'email' => 'nullable|email|max:100|unique:users,email' . ($userId ?? 'NULL'),
+            'contact_number' => 'nullable|string|regex:/^(09\d{9}|\+639\d{9})$/|unique:users,contact_number' . ($userId ?? 'NULL'),
+            'password' => 'nullable|string|min:8|max:25|confirmed',
         ];
     }
 
