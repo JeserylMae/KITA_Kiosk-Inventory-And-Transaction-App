@@ -96,8 +96,8 @@ class User extends Authenticatable
         return $this->hasMany(Delivery::class, 'seller_id');
     }
 
-    public function hasRole(string $role)
+    public function hasAnyRole(...$roles)
     {
-        return $this->role === $role;
+        return in_array($this->role, $roles, true);
     }
 }
