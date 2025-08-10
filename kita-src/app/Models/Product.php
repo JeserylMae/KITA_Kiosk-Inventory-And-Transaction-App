@@ -11,6 +11,7 @@ use App\Models\Delivery;
 
 class Product extends Model
 {
+    public $timestamps = false;
     /**
      * The attributes that are mass assignable.
      * 
