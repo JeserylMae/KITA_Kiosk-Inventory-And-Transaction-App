@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Logic;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DeliveryRequest;
 use App\Models\Delivery;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class DeliveryController extends Controller
 {
@@ -33,6 +33,8 @@ class DeliveryController extends Controller
 
     public function update(DeliveryRequest $request, Delivery $delivery)
     {
+        Gate::authorize('manage-owned', $delivery);
+
         $validated = $request->validated();
 
         $delivery->update($validated);
@@ -44,6 +46,8 @@ class DeliveryController extends Controller
 
     public function destroy(Delivery $delivery)
     {
+        Gate::authorize('manage-owned', $delivery);
+
         $delivery->delete();
 
         return response()->json([
