@@ -6,7 +6,7 @@ use App\Http\Controllers\Logic\TransactionController;
 // DOMAIN/transactions
 Route::controller(TransactionController::class)->group(function ()
 {
-    Route::middleware(['auth', 'verified'])->group(function ()
+    Route::middleware(['auth', 'verified', 'role:admin,seller,cashier'])->group(function ()
     {
         Route::get('/transactions', 'index')->name('transaction.index');
         Route::post('/transactions', 'store')->name('transaction.store');
