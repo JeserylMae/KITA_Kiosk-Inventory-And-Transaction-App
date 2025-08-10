@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
+use Illuminate\Support\Facades\Gate;
 
 class ProductsController extends Controller
 {
@@ -32,6 +33,8 @@ class ProductsController extends Controller
 
     public function update(ProductRequest $request, Product $product)
     {
+        Gate::authorize('manage-owned', $product);
+
         $validated = $request->validated();
 
         $product->update($validated);
@@ -43,6 +46,8 @@ class ProductsController extends Controller
 
     public function destroy(Product $product)
     {
+        Gate::authorize('manage-owned', $product);
+
         $product->delete();
 
         return response()->json([

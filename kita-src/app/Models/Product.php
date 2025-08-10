@@ -11,6 +11,7 @@ use App\Models\Delivery;
 
 class Product extends Model
 {
+    public $timestamps = false;
     /**
      * The attributes that are mass assignable.
      * 
@@ -20,6 +21,7 @@ class Product extends Model
         'name',
         'brand',
         'category_id',
+        'created_by',
     ];
 
     public function category() 
