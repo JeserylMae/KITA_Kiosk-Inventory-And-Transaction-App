@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Logic;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductSupplierRequest;
 use App\Models\ProductSupplier;
+use Illuminate\Support\Facades\Gate;
 
 class ProductSupplierController extends Controller
 {
@@ -32,6 +33,8 @@ class ProductSupplierController extends Controller
 
     public function update(ProductSupplierRequest $request, ProductSupplier $productSupplier)
     {
+        Gate::authorize('manage-owned', $productSupplier);
+
         $validated = $request->validated();
 
         $productSupplier->update($validated);
@@ -43,6 +46,8 @@ class ProductSupplierController extends Controller
 
     public function destroy(ProductSupplier $productSupplier)
     {
+        Gate::authorize('manage-owned', $productSupplier);
+
         $productSupplier->delete();
 
         return response()->json([
