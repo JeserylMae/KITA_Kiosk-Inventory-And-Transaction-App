@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Logic;
 use App\Http\Controllers\Controller;
 use App\Models\Inventory;
 use App\Http\Requests\InventoryRequest;
+use Illuminate\Support\Facades\Gate;
 
 class InventoryController extends Controller
 {
@@ -32,6 +33,8 @@ class InventoryController extends Controller
 
     public function update(InventoryRequest $request, Inventory $inventory)
     {
+        Gate::authorize('manage-owned', $inventory);
+
         $validated = $request->validated();
 
         $inventory->update($validated);
@@ -43,6 +46,8 @@ class InventoryController extends Controller
 
     public function destroy(Inventory $inventory)
     {
+        Gate::authorize('manage-owned', $inventory);
+
         $inventory->delete();
 
         return response()->json([

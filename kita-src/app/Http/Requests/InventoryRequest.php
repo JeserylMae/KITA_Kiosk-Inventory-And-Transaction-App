@@ -29,14 +29,14 @@ class InventoryRequest extends FormRequest
                 'seller_id' => 'required|integer|exists:users,id',
                 'product_id' => 'required|integer|exists:products,id',
                 'quantity' =>  'required|integer|min:0',
-                'selling_price' => 'required|integer|min:0'
+                'selling_price' => 'required|float|min:0'
             ];
         }
         return [
             'seller_id' => 'nullable|integer|exists:users,id',
             'product_id' => 'nullable|integer|exists:products,id',
             'quantity' => 'nullable|integer|min:0',
-            'selling_price' => 'nullable|integer|min:0'
+            'selling_price' => 'nullable|float|min:0'
         ];
     }
 
