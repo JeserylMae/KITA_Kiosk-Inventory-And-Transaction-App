@@ -9,13 +9,14 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\StoreUserRequest;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 
 class UserController extends Controller
 {
     public function index() 
-    {
+    {       
         $users = User::all();
         
         return response()->json([
@@ -41,6 +42,8 @@ class UserController extends Controller
 
     public function update(StoreUserRequest $request, User $user) 
     {
+        Gate::authorize('manage-owned', $user);
+
         $validated = $request->validated();
 
         if ($request->filled('password')){
@@ -56,6 +59,8 @@ class UserController extends Controller
 
     public function destroy(User $user) 
     {
+        Gate::authorize('manage-owned', $user);
+
         $user->delete();
 
         return response()->json([
