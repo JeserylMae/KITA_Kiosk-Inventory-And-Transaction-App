@@ -9,6 +9,7 @@ use App\Models\Product;
 
 class Inventory extends Model
 {
+    public $timestamps = false;
     /**
      * The attributes that are mass assignable.
      * 
