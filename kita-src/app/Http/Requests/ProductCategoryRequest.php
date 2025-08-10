@@ -25,14 +25,16 @@ class ProductCategoryRequest extends FormRequest
             return [
                 'name' => 'required|string|min:2|max:25|unique:product_categories,name',
                 'brand' => 'nullable|string|min:2|max:25',
+                'created_by' => 'required|exists:users,id'
             ];
         }
 
         $productCategoryId = $this->route('productCategory')?->id;
 
         return [
-            'name' => 'nullable|string|min:2|max:25|unique:product_categories,name' . ($productCategoryId ?? 'NULL'),
+            'name' => 'nullable|string|min:2|max:25|unique:product_categories,name,' . ($productCategoryId ?? 'NULL'),
             'brand' => 'nullable|string|min:2|max:25',
+            'created_by' => 'nullable|exists:users,id'
         ];
     }
 }

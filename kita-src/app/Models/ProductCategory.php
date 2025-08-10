@@ -17,6 +17,7 @@ class ProductCategory extends Model
     protected $fillable = [
         'name',
         'description',
+        'created_by',
     ];
 
     public function product()
