@@ -33,6 +33,7 @@ class SupplierRequest extends FormRequest
                 'barangay' => 'nullable|string|max:50',
                 'city' => 'required|string|min:4|max:50',
                 'postal_code' => 'required|string|digits:4',
+                'province' => 'required|string|min:4|max:50',
                 'email' => 'required|email|max:100|unique:suppliers,email',
                 'contact_number' => 'required|string|regex:/^(09\d{9}|\+639\d{9})$/|unique:suppliers,contact_number',
             ];
@@ -49,6 +50,7 @@ class SupplierRequest extends FormRequest
             'barangay' => 'nullable|string|max:50',
             'city' => 'nullable|string|min:4|max:50',
             'postal_code' => 'nullable|string|digits:4',
+            'province' => 'nullable|string|min:4|max:50',
             'email' => 'nullable|email|max:100|unique:suppliers,email,' . ($supplierId ?? 'NULL'),
             'contact_number' => 'nullable|string|regex:/^(09\d{9}|\+639\d{9})$/|unique:suppliers,contact_number,' . ($supplierId ?? 'NULL'),
         ];
