@@ -10,7 +10,7 @@ Route::controller(StoreController::class)->group(function ()
     {
         Route::get('/stores', 'index')->middleware('role:admin')->name('store.index');
         
-        Route::middleware('role:seller,cashier')->group(function () 
+        Route::middleware('role:owner,employee')->group(function () 
         {
             Route::post('/stores', 'store')->name('store.store');
             Route::patch('/stores/{store}', 'update')->name('store.update');

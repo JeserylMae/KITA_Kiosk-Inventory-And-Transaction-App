@@ -11,7 +11,7 @@ Route::controller(SupplierController::class)->group(function ()
     {
         Route::get('/suppliers', 'index')->middleware('role:admin')->name('supplier.index');
 
-        Route::middleware(['role:admin,seller'])->group(function () {
+        Route::middleware(['role:admin,owner'])->group(function () {
             Route::post('/suppliers', 'store')->name('supplier.store');
             Route::patch('/suppliers/{supplier}', 'update')->name('supplier.update');
             Route::delete('/suppliers/{supplier}', 'destroy')->name('supplier.destroy');

@@ -8,7 +8,7 @@ Route::controller(UserController::class)->group(function ()
 {
     Route::post('/users', 'store')->name('user.store');
     
-    Route::middleware(['auth', 'verified', 'role:admin,seller,cashier'])->group(function () 
+    Route::middleware(['auth', 'verified', 'role:admin,owner,employee'])->group(function () 
     {
         Route::get('/users', 'index')->middleware('role:admin')->name('user.index');
         Route::get('/users/me', 'me')->name('user.me');

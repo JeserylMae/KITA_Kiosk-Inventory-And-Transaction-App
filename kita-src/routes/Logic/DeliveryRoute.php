@@ -10,7 +10,7 @@ Route::controller(DeliveryController::class)->group(function ()
     {
         Route::get('/deliveries', 'index')->middleware('role:admin')->name('delivery.index');
 
-        Route::middleware('role:admin,seller')->group(function () {
+        Route::middleware('role:admin,owner')->group(function () {
             Route::post('/deliveries', 'store')->name('delivery.store');
             Route::patch('/deliveries/{delivery}', 'update')->name('delivery.update');
             Route::patch('/deliveries/{delivery}', 'destroy')->name('delivery.destroy');
