@@ -11,6 +11,7 @@ use App\Models\Inventory;
 use App\Models\ProductSupplier;
 use App\Models\Transaction;
 use App\Models\Delivery;
+use App\Models\Store;
 
 class User extends Authenticatable
 {
@@ -94,6 +95,11 @@ class User extends Authenticatable
     public function delivery()
     {
         return $this->hasMany(Delivery::class, 'seller_id');
+    }
+
+    public function store() 
+    {
+        return $this->hasMany(Store::class, 'owner_id');
     }
 
     public function hasAnyRole(...$roles)
