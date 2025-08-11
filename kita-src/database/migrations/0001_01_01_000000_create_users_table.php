@@ -25,7 +25,6 @@ return new class extends Migration
             $table->string('postal_code');
             $table->string('province');
 
-            $table->string('store_name');
             $table->string('role');
 
             $table->string('contact_number');
