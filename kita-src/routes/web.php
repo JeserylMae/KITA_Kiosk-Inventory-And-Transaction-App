@@ -6,10 +6,6 @@ use App\Livewire\Components\Landing;
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
-/*
- * User Inteface Routes 
- */ 
-Route::get('/', Landing::class)->name('landing');
 
 Route::get('/csrf-token', function () {
     return response()->json(['token' => csrf_token()]);
@@ -18,7 +14,6 @@ Route::get('/csrf-token', function () {
 Route::get('/email/verify', function () {
     return view('auth.verify-email'); 
 })->middleware('auth')->name('verification.notice');
-
 
 
 /*
@@ -37,3 +32,17 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 require base_path('routes/Logic/UserRoute.php');
+require base_path('routes/Logic/ProductRoute.php');
+require base_path('routes/Logic/InventoryRoute.php');
+require base_path('routes/Logic/SupplierRoute.php');
+require base_path('routes/Logic/ProductCategoryRoute.php');
+require base_path('routes/Logic/ProductSupplierRoute.php');
+require base_path('routes/Logic/TransactionRoute.php');
+require base_path('routes/Logic/DeliveryRoute.php');
+require base_path('routes/Logic/StoreRoute.php');
+
+
+/*
+ * User Inteface Routes 
+ */ 
+Route::get('/', Landing::class)->name('landing');
