@@ -46,6 +46,7 @@ class StoreUserRequest extends FormRequest
                 'email' => 'required|email|max:100|unique:users,email',
                 'contact_number' => 'required|string|regex:/^(09\d{9}|\+639\d{9})$/|unique:users,contact_number',
                 'password' => 'required|string|min:8|max:25|confirmed',
+                'role' => 'required|string|in:admin,owner,employee',
             ];
         }
 
@@ -64,6 +65,7 @@ class StoreUserRequest extends FormRequest
             'email' => 'nullable|email|max:100|unique:users,email,' . ($userId ?? 'NULL'),
             'contact_number' => 'nullable|string|regex:/^(09\d{9}|\+639\d{9})$/|unique:users,contact_number,' . ($userId ?? 'NULL'),
             'password' => 'nullable|string|min:8|max:25|confirmed',
+            'role' => 'nullable|string|in:admin,owener,employee',
         ];
     }
 
