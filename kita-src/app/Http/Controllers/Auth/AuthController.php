@@ -19,29 +19,18 @@ class AuthController extends Authenticatable implements MustVerifyEmail
     }
 
     /**
-     * Handle the incoming request.
+     * Handle the incoming register request.
      */
     public function signup(StoreUserRequest $request)
-    {
-        $response = $this->user->store($request);
-        $data = $response->getData();
-        $userId = $data->user->id;
-        
-        Auth::LoginUsingId($userId);
+    {        
+        $validated = $request->validated();
+        $validated['password'] = bcrypt($validated['password']); 
 
-        // $user = User::find($userId);
-        // $user->sendEmailVerificationNotification();
-        // To send a verification email, ensure your mail configuration is set up correctly in the .env file:
-        // MAIL_MAILER=smtp
-        // MAIL_HOST=smtp.mailtrap.io
-        // MAIL_PORT=2525
-        // MAIL_USERNAME=your_username
-        // MAIL_PASSWORD=your_password
-        // MAIL_ENCRYPTION=null
-        // MAIL_FROM_ADDRESS=no-reply@example.com
-        // MAIL_FROM_NAME="${APP_NAME}"
+        $user = User::create($validated);
+
+        Auth::LoginUsingId($user->id);
         
-        return back()->with('success', 'User created successfully');
+        return back()->with('success', 'Congratulations! Your account has been created. Thank you for joining us.');
     }
 
     public function login(Request $request)
@@ -49,10 +38,12 @@ class AuthController extends Authenticatable implements MustVerifyEmail
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard')->with('success', 'Login successful');
+            return redirect()->intended('dashboard')->with('success', 'Logged in successfully.');
         }
 
-        return back()->withErrors(['email' => 'Invalid credentials'])->withInput();
+        return back()->withErrors([
+            'login' => 'Login failed. Please check your email and password then try again.'
+        ])->withInput();
     }
 
     public function logout(Request $request)
