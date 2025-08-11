@@ -11,7 +11,7 @@ Route::controller(Product::class)->group(function ()
     {
         Route::get('/products', 'index')->middleware('role:admin')->name('product.index');
 
-        Route::middleware(['role:admin,seller'])->group(function () 
+        Route::middleware(['role:admin,owner'])->group(function () 
         {
             Route::post('/products', 'store')->name('product.store');
             Route::patch('/proucts/{product}', 'update')->name('product.update');

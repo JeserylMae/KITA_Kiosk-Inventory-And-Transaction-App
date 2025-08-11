@@ -6,7 +6,7 @@ use App\Http\Controllers\Logic\ProductSupplierController;
 // DOMAIN/product-suppliers
 Route::controller(ProductSupplierController::class)->group(function () 
 {
-    Route::middleware(['auth', 'verified', 'role:admin,seller'])->group(function ()
+    Route::middleware(['auth', 'verified', 'role:admin,owner'])->group(function ()
     {
         Route::get('/product-suppliers', 'index')->name('product-supplier.index');
         Route::post('/product-suppliers', 'store')->name('product-supplier.store');

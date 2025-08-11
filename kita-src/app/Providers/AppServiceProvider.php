@@ -25,8 +25,9 @@ class AppServiceProvider extends ServiceProvider
          * Only allow signed-in users to update or delete their own records.
          */
         Gate::define('manage-owned', function(User $user, $model){
-            return ($model->user_id ?? 'NULL') === $user->id 
-                || ($model->seller_id ?? 'NULL') === $user->id;
+            return ($model->user_id ?? null) === $user->id 
+                || ($model->seller_id ?? null) === $user->id
+                || ($model->owner_id ?? null) === $user->id;
         });
 
         /**
