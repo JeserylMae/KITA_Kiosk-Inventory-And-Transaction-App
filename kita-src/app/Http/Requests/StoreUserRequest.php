@@ -12,18 +12,18 @@ class StoreUserRequest extends FormRequest
     /**
      * Determine if the user is authorized to make this request.
      */
-    // public function authorize(): bool
-    // {
-    //     if (in_array($this->route()->getActionMethod(), ['destroy'])) 
-    //     {
-    //         if (!Auth::check()) 
-    //         {
-    //             return false;
-    //         }
-    //         return Auth::id() == $this->user->id;
-    //     }
-    //     return true;
-    // }
+    public function authorize(): bool
+    {
+        if (in_array($this->route()->getActionMethod(), ['destroy'])) 
+        {
+            if (!Auth::check()) 
+            {
+                return false;
+            }
+            return Auth::id() == $this->user->id;
+        }
+        return true;
+    }
 
     /**
      * Get the validation rules that apply to the request.

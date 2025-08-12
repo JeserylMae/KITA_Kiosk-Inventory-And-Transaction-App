@@ -8,6 +8,7 @@ use Livewire\Attributes\Layout;
 
 #[Layout('livewire.layout.app')]
 #[Title('Kita')]
+
 class Landing extends Component
 {
     public function render()

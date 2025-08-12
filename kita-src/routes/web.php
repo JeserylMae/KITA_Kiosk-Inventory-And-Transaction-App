@@ -4,6 +4,7 @@ use Livewire\Volt\Volt;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Components\Landing;
 use App\Http\Controllers\Auth\AuthController;
+use App\Livewire\Components\SignUp;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 
