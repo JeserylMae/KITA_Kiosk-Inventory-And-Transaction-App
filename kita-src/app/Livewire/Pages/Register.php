@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Components;
+namespace App\Livewire\Pages;
 
 use Livewire\Component;
 use Livewire\Attributes\Title;
@@ -16,6 +16,6 @@ class Register extends Component
 
     public function render()
     {
-        return view('livewire.components.register');
+        return view('livewire.pages.register');
     }
 }

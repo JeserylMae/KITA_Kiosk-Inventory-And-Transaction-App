@@ -2,9 +2,9 @@
 
 use Livewire\Volt\Volt;
 use Illuminate\Support\Facades\Route;
-use App\Livewire\Components\Landing;
+use App\Livewire\Pages\Landing;
 use App\Http\Controllers\Auth\AuthController;
-use App\Livewire\Components\Register;
+use App\Livewire\Pages\Register;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 
