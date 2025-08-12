@@ -2,22 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreUserRequest;
-use App\Traits\HandlesEmailVerification;
-use App\Http\Controllers\Logic\UserController;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class AuthController extends Authenticatable implements MustVerifyEmail
+class AuthController extends Controller
 {
-    public function __construct()
-    {
-        $this->user = new UserController();
-    }
-
     /**
      * Handle the incoming register request.
      */
