@@ -6,6 +6,7 @@
         placeholder="{{ $placeholder }}" 
         list="{{ $name }}-list" 
         autocomplete="nope"
+        badge="{{ $badge ?? '' }}"
         clearable
     />
 
