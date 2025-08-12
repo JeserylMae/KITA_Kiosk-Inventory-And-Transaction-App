@@ -23,18 +23,19 @@
         
         <div class="flex flex-col gap-3">
             <flux:separator text="ADDRESS" />
-            <div>
-                <flux:input name="house_number" label="House Number" clearable/>
-                <flux:input name="street" label="Street" clearble/>
-                <flux:input name="barangay" label="Baranagay" clearable/>
-                <flux:input name="city" label="City/Municipality" clearable/>
-               
+            <div class="grid grid-cols-2 gap-3">
+                <flux:input name="house_number" label="House Number" badge="Optional" clearable/>
+                <flux:input name="street" label="Street" badge="Optional" clearble/>
+                <livewire:components.autocomplete label="Barangay" name="barangay" placeholder="Select a barangay" badge="Optional" :options="$barangays"/>
+                <livewire:components.autocomplete label="City/Municipality" name="city" placeholder="Select a city" :options="$cities"/>
+                <livewire:components.autocomplete label="State/Province" name="province" placeholder="Select a state" :options="$states"/>
+                <flux:input name="postal_code" label="Postal Code" clearable/>
             </div>
         </div>
 
         <div class="flex flex-col gap-3">
             <flux:separator text="ACCOUNT INFORMATION" />
-            <flux:input name="contact_number" label="Contact Number" mask="+63 999 999 9999" value="+63" /> 
+            <div class="w-1/2"><flux:input name="contact_number" label="Contact Number" mask="+63 999 999 9999" value="+63"/></div>
             <flux:input name="email" label="Email" type="email" clearable />
 
             <div class="grid grid-cols-2 gap-4">

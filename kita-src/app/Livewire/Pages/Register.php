@@ -10,9 +10,9 @@ use Livewire\Attributes\Layout;
 #[Title('Kita | Register')]
 class Register extends Component
 {
-    public $states = [
-        '',
-    ];
+    public $barangays = [ '', 'San Mateo', 'Poblacion', 'San Mariano' ];
+    public $cities = [ 'San Pascual', 'Bolbok', 'Sta. Rita' ];
+    public $states = [ 'Batangas', 'Laguna', 'Quezon'];
 
     public function render()
     {
