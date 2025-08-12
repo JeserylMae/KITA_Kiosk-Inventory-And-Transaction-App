@@ -20,6 +20,17 @@
                 <flux:input name="middle_name" label="Middle Name" badge="Optional" clearable/>
             </div>
         </div>
+        
+        <div class="flex flex-col gap-3">
+            <flux:separator text="ADDRESS" />
+            <div>
+                <flux:input name="house_number" label="House Number" clearable/>
+                <flux:input name="street" label="Street" clearble/>
+                <flux:input name="barangay" label="Baranagay" clearable/>
+                <flux:input name="city" label="City/Municipality" clearable/>
+               
+            </div>
+        </div>
 
         <div class="flex flex-col gap-3">
             <flux:separator text="ACCOUNT INFORMATION" />
