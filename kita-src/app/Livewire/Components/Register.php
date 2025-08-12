@@ -10,6 +10,10 @@ use Livewire\Attributes\Layout;
 #[Title('Kita | Register')]
 class Register extends Component
 {
+    public $states = [
+        '',
+    ];
+
     public function render()
     {
         return view('livewire.components.register');
