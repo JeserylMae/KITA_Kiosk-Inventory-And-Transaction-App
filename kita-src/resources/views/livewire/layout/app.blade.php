@@ -4,7 +4,6 @@
     @include('partials.head', ['title' => $title])
     @stack('styles')
     @livewireStyles
-    @fluxAppearance
 </head>
 
 <body>

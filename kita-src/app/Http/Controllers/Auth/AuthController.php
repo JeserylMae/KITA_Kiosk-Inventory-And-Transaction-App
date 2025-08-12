@@ -13,10 +13,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class AuthController extends Authenticatable implements MustVerifyEmail
 {
-    // public function __construct()
-    // {
-    //     $this->user = new UserController();
-    // }
+    public function __construct()
+    {
+        $this->user = new UserController();
+    }
 
     /**
      * Handle the incoming register request.
@@ -30,10 +30,7 @@ class AuthController extends Authenticatable implements MustVerifyEmail
 
         Auth::LoginUsingId($user->id);
         
-        return redirect()->back()->with([
-            'success' => true, 
-            'message' => 'Congratulations! Your account has been created. Thank you for joining us.',
-        ]);
+        return back()->with('success', 'Congratulations! Your account has been created. Thank you for joining us.');
     }
 
     public function login(Request $request)

@@ -10,6 +10,8 @@ export default defineConfig({
             input: [
                 'resources/css/app.css', 
                 'resources/css/landing.css',
+                'resources/css/auth.css',
+                'resources/js/landing.js',
                 'resources/js/app.js',
             ],
             refresh: true,
