@@ -24,7 +24,7 @@ class StoreUserRequest extends FormRequest
      */
     public function rules(): array
     {
-        if (in_array($this->route()->getActionMethod(), ['store'])){
+        if (in_array($this->route()->getActionMethod(), ['store', 'signup'])){
             return [
                 'last_name' => 'required|string|min:2|max:25',
                 'first_name' => 'required|string|min:2|max:25',
@@ -36,7 +36,7 @@ class StoreUserRequest extends FormRequest
                 'postal_code' => 'required|string|digits:4',
                 'province' => 'required|string|min:4|max:50',
                 'email' => 'required|email|max:100|unique:users,email',
-                'contact_number' => 'required|string|regex:/^(09\d{9}|\+639\d{9})$/|unique:users,contact_number',
+                'contact_number' => 'required|string|regex:/^\+63\s\d{3}\s\d{3}\s\d{4}$/|unique:users,contact_number',
                 'password' => 'required|string|min:8|max:25|confirmed',
             ];
         }
@@ -54,7 +54,7 @@ class StoreUserRequest extends FormRequest
             'postal_code' => 'nullable|string|digits:4',
             'province' => 'nullable|string|min:4|max:50',
             'email' => 'nullable|email|max:100|unique:users,email,' . ($userId ?? 'NULL'),
-            'contact_number' => 'nullable|string|regex:/^(09\d{9}|\+639\d{9})$/|unique:users,contact_number,' . ($userId ?? 'NULL'),
+            'contact_number' => 'nullable|string|regex:/^\+63\s\d{3}\s\d{3}\s\d{4}$/|unique:users,contact_number,' . ($userId ?? 'NULL'),
             'password' => 'nullable|string|min:8|max:25|confirmed',
         ];
     }
