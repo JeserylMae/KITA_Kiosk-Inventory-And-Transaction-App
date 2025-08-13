@@ -20,6 +20,7 @@ class AuthController extends Controller
 
         $user = User::create($validated);
 
+        $this->verify_email($user);
         Auth::LoginUsingId($user->id);
         
         return back()->with('success', 'Congratulations! Your account has been created. Thank you for joining us.');
@@ -46,5 +47,11 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         return redirect()->route('login')->with('success', 'Logged out successfully');
+    }
+
+    protected function verify_email(User $user)
+    {
+        $user->markEmailAsVerified();
+        $user->save();
     }
 }
