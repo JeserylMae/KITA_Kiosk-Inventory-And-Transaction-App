@@ -2,8 +2,9 @@
 
 use Livewire\Volt\Volt;
 use Illuminate\Support\Facades\Route;
-use App\Livewire\Components\Landing;
+use App\Livewire\Pages\Landing;
 use App\Http\Controllers\Auth\AuthController;
+use App\Livewire\Pages\Register;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 
@@ -46,3 +47,4 @@ require base_path('routes/Logic/StoreRoute.php');
  * User Inteface Routes 
  */ 
 Route::get('/', Landing::class)->name('landing');
+Route::get('/register', Register::class)->name('register');

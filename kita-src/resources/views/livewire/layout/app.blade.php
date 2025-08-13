@@ -4,12 +4,13 @@
     @include('partials.head', ['title' => $title])
     @stack('styles')
     @livewireStyles
+    @fluxAppearance
 </head>
 
 <body>
     <div>
-        <div>
-            
+        <div class="p-5">
+
             {{ $slot }}
     
         </div>

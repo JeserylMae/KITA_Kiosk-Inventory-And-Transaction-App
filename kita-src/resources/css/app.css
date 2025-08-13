@@ -6,10 +6,25 @@
 @source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
 @source '../../vendor/livewire/flux/stubs/**/*.blade.php';
 
-@layer base {
-    :root {
-        
+
+/* resources/css/app.css */
+
+@theme {
+    --color-accent: var(--color-red-500);
+    --color-accent-content: #18c72a;
+    --color-accent-foreground: var(--color-white);
+}
+
+@layer theme {
+    .dark {
+        --color-accent: var(--color-red-500);
+        --color-accent-content: var(--color-red-400);
+        --color-accent-foreground: var(--color-white);
     }
+}
+
+@layer base {
+    
 }
 
 @layer utilities {
@@ -17,5 +32,11 @@
 }
 
 @layer components {
-
+    .btn {
+        @apply w-max px-4 py-1.5 border border-none rounded-md mx-1 font-semibold bg-[var(--color-accent-content)];
+        @apply hover:bg-accent hover:text-accent-foreground;
+    }
+    .btn-primary {
+        @apply border-amber-300 bg-amber-300 hover:bg-amber-500;
+    }
 }

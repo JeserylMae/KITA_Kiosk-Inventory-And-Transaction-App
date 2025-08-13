@@ -23,7 +23,11 @@ class AuthController extends Controller
         $this->verify_email($user);
         Auth::LoginUsingId($user->id);
         
-        return back()->with('success', 'Congratulations! Your account has been created. Thank you for joining us.');
+        return back()->with([
+            'success' => true, 
+            'header' => 'You’re all set!',
+            'content' => 'Registration completed successfully.'
+        ]);
     }
 
     public function login(Request $request)

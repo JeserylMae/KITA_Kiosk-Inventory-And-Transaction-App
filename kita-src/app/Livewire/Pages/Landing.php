@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Components;
+namespace App\Livewire\Pages;
 
 use Livewire\Component;
 use Livewire\Attributes\Title;
@@ -12,6 +12,6 @@ class Landing extends Component
 {
     public function render()
     {
-        return view('livewire.components.landing');
+        return view('livewire.pages.landing');
     }
 }
