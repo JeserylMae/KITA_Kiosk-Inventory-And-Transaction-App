@@ -44,6 +44,8 @@
             </div>
         </div>
 
+        <input name="role" type="hidden" value="owner"/>
+
         <button class="btn btn-primary" type="submit">Create Account</button>
     </form>
 </div>
