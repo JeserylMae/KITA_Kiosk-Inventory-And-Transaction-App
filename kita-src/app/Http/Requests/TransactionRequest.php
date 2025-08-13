@@ -33,6 +33,7 @@ class TransactionRequest extends FormRequest
                 'purchase_price' => 'required|float|min:0',
                 'quantity' => 'required|integer|min:0',
                 'transaction_type' => 'required|string|min:4|max:10',
+                'store_id' => 'required|integer|exists:stores,id',
             ];
         }
         return [
@@ -43,6 +44,7 @@ class TransactionRequest extends FormRequest
             'purchase_price' => 'nullable|float|min:0',
             'quantity' => 'nullable|integer|min:0',
             'transaction_type' => 'mullable|string|min:4|max:10',
+            'store_id' => 'nullable|integer|exists:stores,id',
         ];
     }
 

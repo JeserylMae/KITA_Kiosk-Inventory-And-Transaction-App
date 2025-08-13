@@ -17,7 +17,7 @@ class Delivery extends Model
      * @var list<string>
      */
     protected $fillable = [
-        'seller_id',
+        'owner_id',
         'supplier_id', 
         'product_id',
         'quantity',

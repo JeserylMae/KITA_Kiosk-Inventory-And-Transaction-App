@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\User;
 use App\Models\Product;
+use App\Models\Store;
 
 class Inventory extends Model
 {
@@ -16,10 +17,12 @@ class Inventory extends Model
      * @var list<string> 
      */
     protected $fillable = [
-        'seller_id', 
+        'user_id', 
         'product_id',
         'quantity',
         'selling_price',
+        'expiry_date',
+        'store_id',
     ];
 
     protected function casts(): array
@@ -33,11 +36,16 @@ class Inventory extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'seller_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function product()
     {
         return $this->belongsTo(Product::class, 'product_id');
+    }
+
+    public function store()
+    {
+        return $this->belongsTo(Store::class, 'store_id');
     }
 }
