@@ -35,7 +35,6 @@ class User extends Authenticatable
         'postal_code',
         'province',
 
-        'store_name',
         'role',
 
         'email',
@@ -84,7 +83,7 @@ class User extends Authenticatable
 
     public function productSupplier()
     {
-        return $this->hasMany(productSupplier::class, 'seller_id');
+        return $this->hasMany(ProductSupplier::class, 'seller_id');
     }
 
     public function transaction()
