@@ -20,9 +20,11 @@ return new class extends Migration
             $table->decimal('purchase_price', 12, 3);
             $table->integer('quantity');
             $table->string('transaction_type');
+            $table->unsignedBigInteger('store_id');
 
             $table->foreign('product_id')->references('id')->on('products');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('store_id')->references('id')->on('stores');
         });
     }
 

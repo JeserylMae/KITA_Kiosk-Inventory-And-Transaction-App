@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('deliveries', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('seller_id');
+            $table->unsignedBigInteger('owner_id');
             $table->unsignedBigInteger('supplier_id');
             $table->unsignedBigInteger('product_id');
             $table->integer('quantity');
             $table->dateTime('delivery_date');
             $table->decimal('wholesale_price', 12, 3);
 
-            $table->foreign('seller_id')->references('id')->on('users');
+            $table->foreign('owner_id')->references('id')->on('users');
             $table->foreign('supplier_id')->references('id')->on('suppliers');
             $table->foreign('product_id')->references('id')->on('products');
         });

@@ -28,12 +28,14 @@ class ProductSupplierRequest extends FormRequest
                 'seller_id' => 'required|integer|exists:users,id',
                 'supplier_id' => 'required|integer|exists:suppliers,id',
                 'product_id' => 'required|integer|exists:products,id',
+                'store_id' => 'required|integer|exists:stores,id',
             ];
         }
        return [
             'seller_id' => 'nullable|integer|exists:users,id',
             'supplier_id' => 'nullable|integer|exists:suppliers,id',
             'product_id' => 'nullable|integer|exists:products,id',
+            'store_id' => 'nullable|integer|exists:stores,id',
         ];
     }
 

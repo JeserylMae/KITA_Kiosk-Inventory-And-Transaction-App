@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\User;
 use App\Models\Product;
 use App\Models\Supplier;
+use App\Models\Store;
 use Illuminate\Database\Eloquent\Model;
 
 class ProductSupplier extends Model
@@ -18,8 +19,9 @@ class ProductSupplier extends Model
      */
     protected $fillable = [
         'supplier_id',
-        'seller_id',
+        'owner_id',
         'product_id',
+        'store_id',
     ];
 
      /**
@@ -31,8 +33,9 @@ class ProductSupplier extends Model
     {
         return [
             'supplier_id' => 'integer',
-            'seller_id' => 'integer',
+            'owner_id' => 'integer',
             'product_id' => 'integer',
+            'store_id' => 'integer',
         ];
     }
 
@@ -43,11 +46,16 @@ class ProductSupplier extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'seller_id');
+        return $this->belongsTo(User::class, 'owner_id');
     }
 
     public function product()
     {
         return $this->belongsTo(Product::class, 'product_id');
+    }
+
+    public function store() 
+    {
+        return $this->belongsTo(Store::class, 'store_id');
     }
 }

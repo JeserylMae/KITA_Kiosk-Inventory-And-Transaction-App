@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\Product;
+use App\Models\Store;
 
 class Transaction extends Model
 {
@@ -23,6 +24,7 @@ class Transaction extends Model
         'purchase_price',
         'quantity',
         'transaction_type',
+        'store_id',
     ];
 
     public function casts(): array 
@@ -43,5 +45,10 @@ class Transaction extends Model
     public function product()
     {
         return $this->belongsTo(Product::class, 'product_id');
+    }
+
+    public function store()
+    {
+        return $this->belongsTo(Store::class, 'store_id');
     }
 }

@@ -26,7 +26,7 @@ class DeliveryRequest extends FormRequest
     {
         if(in_array($this->route()->getActionMethod(), ['store'])) {
             return [
-                'seller_id' => 'required|integer|exists:users,id',
+                'owner_id' => 'required|integer|exists:users,id',
                 'supplier_id' => 'required|integer|exists:suppliers,id',
                 'product_id' => 'required|integer|exists:products,id',
                 'quantity' => 'required|integer|min:0',
@@ -35,7 +35,7 @@ class DeliveryRequest extends FormRequest
             ];
         }
         return [
-            'seller_id' => 'nullable|integer|exists:users,id',
+            'owner_id' => 'nullable|integer|exists:users,id',
             'supplier_id' => 'nullable|integer|exists:suppliers,id',
             'product_id' => 'nullable|integer|exists:products,id',
             'quantity' => 'nullable|integer|min:0',
