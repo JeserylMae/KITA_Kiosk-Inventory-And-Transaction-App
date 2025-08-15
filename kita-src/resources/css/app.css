@@ -39,6 +39,8 @@
 
         --color-filled: var(--color-slate-900);
         --color-filled-foreground: var(--color-slate-400);
+
+        --color-card: var(--color-slate-800);
   
         --color-border: var(--color-slate-700);
         --color-background: var(--color-slate-900);
@@ -51,8 +53,6 @@
         --color-primary: var(--color-lime-400);
         --color-primary-content: var(--color-slate-500);
         --color-primary-foreground: var(--color-slate-900);
-
-        /* --color-accent: var(--color-lime-900); */
 
         --color-vix-1: var(--color-lime-200);
         --color-vix-2: var(--color-lime-400);
@@ -74,5 +74,25 @@
     }
     .btn-primary {
         @apply border-amber-300 bg-amber-300 hover:bg-amber-500;
+    }
+
+    .card {
+        @apply bg-[var(--color-card)] border border-[var(--color-border)] rounded;
+    }
+    
+    .navbar {
+        @apply w-full h-max rounded-none border-t-0;
+    }
+
+    .layout {
+        @apply w-full xl:w-7xl px-8 py-2;
+    }
+    
+    .stack-center {
+        @apply flex flex-col justify-center items-center;
+    }
+
+    .inline-between {
+        @apply flex flex-row justify-between items-center;
     }
 }
