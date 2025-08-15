@@ -10,21 +10,57 @@
 /* resources/css/app.css */
 
 @theme {
-    --color-accent: var(--color-red-500);
-    --color-accent-content: #18c72a;
-    --color-accent-foreground: var(--color-white);
+    --color-secondary: var(--color-slate-200);
+    --color-secondary-foreground: var(--color-slate-500);
+    
+    --color-muted: var(--color-slate-200);
+    --color-muted-content: var(--color-slate-900);
+    --color-muted-foreground: var(--color-slate-400);
+    
+    --color-filled: var(--color-slate-300);
+    --color-filled-foreground: var(--color-slate-500);
+
+    --color-card: var(--color-slate-50);
+
+    --color-border: var(--color-slate-200);
+    --color-background: var(--color-slate-100);
+    --color-foreground: var(--color-slate-900);
+
 }
 
 @layer theme {
     .dark {
-        --color-accent: var(--color-red-500);
-        --color-accent-content: var(--color-red-400);
-        --color-accent-foreground: var(--color-white);
+        --color-secondary: var(--color-slate-900);
+        --color-secondary-foreground: var(--color-slate-400);
+
+        --color-muted: var(--color-slate-900);
+        --color-muted-content: var(--color-slate-50);
+        --color-muted-foreground: var(--color-slate-400);
+
+        --color-filled: var(--color-slate-900);
+        --color-filled-foreground: var(--color-slate-400);
+  
+        --color-border: var(--color-slate-700);
+        --color-background: var(--color-slate-900);
+        --color-foreground: var(--color-slate-50);
     }
 }
 
 @layer base {
-    
+    :root {
+        --color-primary: var(--color-lime-400);
+        --color-primary-content: var(--color-slate-500);
+        --color-primary-foreground: var(--color-slate-900);
+
+        /* --color-accent: var(--color-lime-900); */
+
+        --color-vix-1: var(--color-lime-200);
+        --color-vix-2: var(--color-lime-400);
+        --color-vix-3: var(--color-lime-600);
+
+        --color-error: var(--color-red-500);
+        --color-error-foreground: var(--color-slate-50);
+    }
 }
 
 @layer utilities {
