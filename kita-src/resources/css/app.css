@@ -69,30 +69,12 @@
 
 @layer components {
     .btn {
-        @apply w-max px-4 py-1.5 border border-none rounded-md mx-1 font-semibold bg-[var(--color-accent-content)];
-        @apply hover:bg-accent hover:text-accent-foreground;
+        @apply flex flex-row justify-center items-center gap-3 px-5 py-2 w-max rounded-sm border border-[var(--color-border)] bg-[var(--color-secondary)] text-[var(--color-secondary-foreground)] font-normal text-sm capitalize;
+    }
+    .btn-ghost {
+        @apply bg-transparent border-none text-[var(--color-muted-foreground)];
     }
     .btn-primary {
-        @apply border-amber-300 bg-amber-300 hover:bg-amber-500;
-    }
-
-    .card {
-        @apply bg-[var(--color-card)] border border-[var(--color-border)] rounded;
-    }
-    
-    .navbar {
-        @apply w-full h-max rounded-none border-t-0;
-    }
-
-    .layout {
-        @apply w-full xl:w-7xl px-8 py-2;
-    }
-    
-    .stack-center {
-        @apply flex flex-col justify-center items-center;
-    }
-
-    .inline-between {
-        @apply flex flex-row justify-between items-center;
+        @apply bg-[var(--color-primary)] text-[var(--color-primary-foreground)] rounded-xl;
     }
 }
