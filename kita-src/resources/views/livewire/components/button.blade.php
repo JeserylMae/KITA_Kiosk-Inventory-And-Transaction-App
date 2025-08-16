@@ -2,7 +2,7 @@
 {{-- Success is as dangerous as failure. --}}
 
 @if ($variant === 'link')
-    <a href="{{ $href }}" class="btn btn-ghost relative {{ $style }}">
+    <a href="{{ $href }}" class="btn btn-ghost relative {{ $class }}">
         @if ($icon) 
             <span class="material-symbols-outlined !text-[20px]">{{ $icon }}</span> 
         @endif
@@ -19,7 +19,7 @@
         @endif
     </a>    
 @else 
-    <button @class([ 'btn', 'btn-' . $variant, $style, 'btn-disabled' => $disabled, ])>    
+    <button @class([ 'btn', 'btn-' . $variant, $class, 'btn-disabled' => $disabled, ])>    
         <span class="material-symbols-outlined !text-[20px]">{{ $icon }}</span>
         
         @if ($label) 
