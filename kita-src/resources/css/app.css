@@ -61,6 +61,21 @@
         --color-error: var(--color-red-500);
         --color-error-foreground: var(--color-slate-50);
     }
+
+    .navlink-active {
+        @apply text-[var(--color-foreground)];
+    }
+
+    .navlink::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: var(--after-width, 0%); 
+        height: 2px;
+        background: var(--color-foreground);
+        transition: width 0.3s ease;
+    }
 }
 
 @layer utilities {
@@ -98,3 +113,4 @@
         @apply bg-[var(--color-card)] border border-[var(--color-border)] rounded;
     }
 }
+
