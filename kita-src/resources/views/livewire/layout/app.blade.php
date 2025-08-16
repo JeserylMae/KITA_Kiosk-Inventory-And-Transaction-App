@@ -17,14 +17,14 @@
                <span class="font-medium text-[var(--color-foreground)]">Kita</span>
             </button>
 
-            <livewire:components.button href="/" icon="home" label="Home" variant="link" size="text-sm"/>
-            <livewire:components.button icon="calculate" label="Calculator" variant="link" size="text-sm"/>
-            <livewire:components.button icon="notifications" label="Notifications" variant="link" badge="2" size="text-sm"/>
+            <livewire:components.button href="/" icon="home" label="Home" variant="link" size="text-sm" class="navlink"/>
+            <livewire:components.button icon="calculate" label="Calculator" variant="link" size="text-sm" class="navlink"/>
+            <livewire:components.button icon="notifications" label="Notifications" variant="link" badge="2" size="text-sm" class="navlink"/>
          </div>
    
          <div class="inline-between">
-            <livewire:components.button icon="add" variant="primary" label="|" trailing="arrow_drop_down" size="text-sm" style="gap-1 rounded-br-none"/>
-            <livewire:components.button icon="search" label="Search" style="rounded-lg rounded-br-none pr-5 mx-2" size="text-sm"/>
+            <livewire:components.button icon="add" variant="primary" label="|" trailing="arrow_drop_down" size="text-sm" class="gap-1 rounded-br-none"/>
+            <livewire:components.button icon="search" label="Search" class="rounded-lg rounded-br-none pr-5 mx-2" size="text-sm"/>
             <livewire:components.button icon="info" variant="ghost"/>
             <livewire:components.button icon="settings" variant="ghost"/>
 
