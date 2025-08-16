@@ -39,6 +39,8 @@
 
         --color-filled: var(--color-slate-900);
         --color-filled-foreground: var(--color-slate-400);
+
+        --color-card: var(--color-slate-800);
   
         --color-border: var(--color-slate-700);
         --color-background: var(--color-slate-900);
@@ -52,14 +54,27 @@
         --color-primary-content: var(--color-slate-500);
         --color-primary-foreground: var(--color-slate-900);
 
-        /* --color-accent: var(--color-lime-900); */
-
         --color-vix-1: var(--color-lime-200);
         --color-vix-2: var(--color-lime-400);
         --color-vix-3: var(--color-lime-600);
 
         --color-error: var(--color-red-500);
         --color-error-foreground: var(--color-slate-50);
+    }
+
+    .navlink-active {
+        @apply text-[var(--color-foreground)];
+    }
+
+    .navlink::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: var(--after-width, 0%); 
+        height: 2px;
+        background: var(--color-foreground);
+        transition: width 0.3s ease;
     }
 }
 
@@ -69,10 +84,33 @@
 
 @layer components {
     .btn {
-        @apply w-max px-4 py-1.5 border border-none rounded-md mx-1 font-semibold bg-[var(--color-accent-content)];
-        @apply hover:bg-accent hover:text-accent-foreground;
+        @apply flex flex-row justify-center items-center gap-3 px-3 py-2 w-max rounded-sm; 
+        @apply border border-[var(--color-border)] bg-[var(--color-secondary)] ;
+        @apply text-[var(--color-secondary-foreground)] font-normal text-base capitalize;
+
+        @apply hover:text-[var(--color-foreground)] hover:font-medium;
+    }
+    .btn-ghost {
+        @apply bg-transparent border-none text-[var(--color-muted-foreground)];
+        @apply hover:bg-[var(--color-background)];
+
     }
     .btn-primary {
-        @apply border-amber-300 bg-amber-300 hover:bg-amber-500;
+        @apply bg-[var(--color-primary)] text-[var(--color-primary-foreground)] rounded-xl;
+    }
+
+    .stack-center {
+        @apply flex flex-row justify-center items-center;
+    }
+    .inline-between {
+        @apply flex flex-row justify-between items-center;
+    }
+
+    .navbar {
+        @apply w-full xl:w-7xl h-max py-2 px-8;
+    }
+    .card {
+        @apply bg-[var(--color-card)] border border-[var(--color-border)] rounded;
     }
 }
+

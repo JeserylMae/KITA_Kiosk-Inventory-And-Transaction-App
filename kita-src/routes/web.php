@@ -8,6 +8,7 @@ use App\Livewire\Pages\Dashboard;
 use App\Livewire\Pages\Login;
 use App\Livewire\Pages\Register;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Livewire\Features\SupportPageComponents\LayoutMiddleware;
 
 
 Route::get('/csrf-token', function () {
@@ -48,7 +49,15 @@ require base_path('routes/Logic/StoreRoute.php');
 /*
  * User Inteface Routes 
  */ 
-Route::get('/', Landing::class)->name('page.landing');
+Route::view('/', 'livewire.layout.landing');
 Route::get('/register', Register::class)->name('page.register');
 Route::get('/login', Login::class)->name('page.login');
-Route::get('/dashboard', Dashboard::class)->name('page.dashboard');
+
+/**
+ * The default redirect route when accessing the routes below (for example, /dashboard)
+ * has a name login. But since i am using page.login, I created an Authenticate.php file
+ * in App\Middleware to change it. Then registered the middleware in bootstrap\app.php.
+ */
+Route::middleware(['auth', 'verified', 'role:admin,owner,employee'])->group(function () {
+    Route::get('/dashboard', Dashboard::class)->name('page.dashboard');
+})
