@@ -69,12 +69,28 @@
 
 @layer components {
     .btn {
-        @apply flex flex-row justify-center items-center gap-3 px-5 py-2 w-max rounded-sm border border-[var(--color-border)] bg-[var(--color-secondary)] text-[var(--color-secondary-foreground)] font-normal text-sm capitalize;
+        @apply flex flex-row justify-center items-center gap-3 px-3 py-2 w-max rounded-sm; 
+        @apply border border-[var(--color-border)] bg-[var(--color-secondary)] ;
+        @apply text-[var(--color-secondary-foreground)] font-normal text-base capitalize;
     }
     .btn-ghost {
         @apply bg-transparent border-none text-[var(--color-muted-foreground)];
     }
     .btn-primary {
         @apply bg-[var(--color-primary)] text-[var(--color-primary-foreground)] rounded-xl;
+    }
+
+    .stack-center {
+        @apply flex flex-row justify-center items-center;
+    }
+    .inline-between {
+        @apply flex flex-row justify-between items-center;
+    }
+
+    .navbar {
+        @apply w-full xl:w-7xl h-max py-2 px-8;
+    }
+    .card {
+        @apply bg-[var(--color-card)] border border-[var(--color-border)] rounded;
     }
 }
