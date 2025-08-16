@@ -11,6 +11,10 @@ class Button extends Component
     public $icon;
     public $label;
     public $badge;
+    public $trailing;
+    public $style;
+    public $disabled;
+    public $size;
 
     public function render()
     {
