@@ -6,7 +6,7 @@ use Livewire\Component;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Layout;
 
-#[Layout('livewire.layout.app')]
+#[Layout('livewire.layout.auth')]
 #[Title('Kita | Log In')]
 class Login extends Component
 {
