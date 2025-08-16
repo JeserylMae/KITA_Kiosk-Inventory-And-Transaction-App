@@ -12,7 +12,7 @@ class Button extends Component
     public $label;
     public $badge;
     public $trailing;
-    public $style;
+    public $class;
     public $disabled;
     public $size;
 
