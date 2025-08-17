@@ -2,7 +2,7 @@
 {{-- Success is as dangerous as failure. --}}
 
 @if ($variant === 'link')
-    <a href="{{ $href }}" class="btn btn-ghost relative {{ $class }}">
+    <a href="{{ $href }}" class="btn btn-ghost relative {{ $class }}" id="{{ $id }}">
         @if ($icon) 
             <span class="material-symbols-outlined !text-[20px]">{{ $icon }}</span> 
         @endif
@@ -19,15 +19,22 @@
         @endif
     </a>    
 @else 
-    <button @class([ 'btn', 'btn-' . $variant, $class, 'btn-disabled' => $disabled, ])>    
-        <span class="material-symbols-outlined !text-[20px]">{{ $icon }}</span>
+    @php
+        $extraClasses = is_array($class) ? $class : explode(' ', $class ?? '');
+        $allClasses = array_merge(['btn', 'btn-' . $variant], $extraClasses, $disabled ? ['btn-disabled'] : []);
+    @endphp
+
+    <button @class($allClasses) id="{{ $id }}">    
+        @if ($icon) 
+            <span class="material-symbols-outlined !text-[20px]">{{ $icon }}</span>
+        @endif
         
         @if ($label) 
-            <span @class([ $size, ])> {{ $label }} </span> 
+            <span @class([ $size, 'btnlabel'])> {{ $label }} </span> 
         @endif
         
         @if ($trailing) 
-            <span class="material-symbols-outlined !text-[20px]">{{ $trailing }}</span> 
+            <span class="material-symbols-outlined !text-[20px] btntrailing">{{ $trailing }}</span> 
         @endif
     </button>
 @endif
