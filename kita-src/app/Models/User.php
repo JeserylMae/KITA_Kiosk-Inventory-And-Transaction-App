@@ -103,6 +103,9 @@ class User extends Authenticatable
 
     public function hasAnyRole(...$roles)
     {
+        if (count($roles) === 1 && is_array($roles[0])) {
+            $roles = $roles[0];
+        }
         return in_array($this->role, $roles, true);
     }
 }

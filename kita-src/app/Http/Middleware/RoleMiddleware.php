@@ -17,7 +17,7 @@ class RoleMiddleware
     {
         $user = auth()->user();
         
-        if ( !$user || $user->hasAnyRole($roles) ) {
+        if ( !$user || !$user->hasAnyRole($roles) ) {
             return abort(403);
          }
         return $next($request);
