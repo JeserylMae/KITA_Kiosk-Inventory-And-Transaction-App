@@ -6,6 +6,7 @@ use Livewire\Component;
 
 class Button extends Component
 {
+    public $id;
     public $variant;
     public $href;
     public $icon;
