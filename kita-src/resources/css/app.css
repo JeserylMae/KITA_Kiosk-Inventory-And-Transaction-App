@@ -117,19 +117,15 @@
         @apply w-full text-base justify-between bg-[var(--color-primary)] text-[var(--color-primary-foreground)];
     }
 
-    .navlink-active {
-        @apply text-[var(--color-foreground)] font-medium;
+    .navlink {
+        @apply relative;
     }
-
+    .navlink-active {
+        @apply text-[var(--color-foreground)] font-medium relative;
+    }
     .navlink::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: var(--after-width, 100%); 
-        height: 2px;
-        background: var(--color-foreground);
-        transition: width 0.3s ease;
+        @apply after:content-none absolute left-0 bottom-0 w-0 h-0.5 bg-[var(--color-foreground)];
+        @apply transition-[width] duration-300 ease-in-out;
     }
 }
 
