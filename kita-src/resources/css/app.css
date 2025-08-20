@@ -61,21 +61,6 @@
         --color-error: var(--color-red-500);
         --color-error-foreground: var(--color-slate-50);
     }
-
-    .navlink-active {
-        @apply text-[var(--color-foreground)];
-    }
-
-    .navlink::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: var(--after-width, 0%); 
-        height: 2px;
-        background: var(--color-foreground);
-        transition: width 0.3s ease;
-    }
 }
 
 @layer utilities {
@@ -91,9 +76,9 @@
     }
     .btn {
         @apply flex flex-row justify-center items-center gap-3 px-3 py-2 w-max rounded-sm; 
-        @apply border border-[var(--color-border)] bg-[var(--color-secondary)] ;
+        @apply border border-[var(--color-border)] bg-[var(--color-secondary)];
         @apply text-[var(--color-secondary-foreground)] font-normal text-base capitalize;
-        @apply transition ease-in-out duration-300;
+        @apply transition ease-in duration-75;
 
         @apply hover:text-[var(--color-foreground)] hover:font-medium;
     }
@@ -130,6 +115,21 @@
     }
     .sidebar-item-active {
         @apply w-full text-base justify-between bg-[var(--color-primary)] text-[var(--color-primary-foreground)];
+    }
+
+    .navlink-active {
+        @apply text-[var(--color-foreground)] font-medium;
+    }
+
+    .navlink::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: var(--after-width, 100%); 
+        height: 2px;
+        background: var(--color-foreground);
+        transition: width 0.3s ease;
     }
 }
 
