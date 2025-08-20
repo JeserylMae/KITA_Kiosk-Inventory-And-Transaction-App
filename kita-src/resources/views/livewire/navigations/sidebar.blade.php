@@ -1,35 +1,44 @@
 
 <div id="sidebar">
-    <livewire:components.button 
-        label="Dashboard" 
-        variant="filled" 
+    <x-button 
         id="dashboard" 
+        variant="filled" 
         wire:click="setActiveButton('dashboard')"
-        class="{{ $currentPage === 'dashboard' ? 'sidebar-item-active' : 'sidebar-item' }}" />
+        class="{{ $currentPage === 'dashboard' ? 'sidebar-item-active' : 'sidebar-item' }}"
+        > Dashboard 
+    </x-button>
 
-    <livewire:components.button 
-        label="Inventory" 
-        trailing="arrow_right" 
-        variant="filled" 
+    <x-button
+        id="inventory"
+        variant="filled"
         wire:click="setActiveButton('inventory')"
-        class="{{ $currentPage === 'inventory' ? 'sidebar-item-active' : 'sidebar-item' }}"/>
+        trailing="{{ $currentPage === 'inventory' ? 'arrow_drop_down' : 'arrow_right' }}"
+        class="{{ $currentPage === 'inventory' ? 'sidebar-item-active trailing' : 'sidebar-item' }}"
+        > Inventory  
+    </x-button>
 
-    <livewire:components.button 
-        label="Sales" 
-        variant="filled"  
+    <x-button
+        id="sales"
+        variant="filled"
         wire:click="setActiveButton('sales')"
-        class="{{ $currentPage === 'sales' ? 'sidebar-item-active' : 'sidebar-item' }}"/>
+        class="{{ $currentPage === 'sales' ? 'sidebar-item-active' : 'sidebar-item' }}"
+        > Sales 
+    </x-button>
 
-    <livewire:components.button 
-        label="Expenses" 
-        variant="filled" 
+    <x-button
+        id="expenses"
+        variant="filled"
         wire:click="setActiveButton('expenses')"
-        class="{{ $currentPage === 'expenses' ? 'sidebar-item-active' : 'sidebar-item' }}"/>
+        class="{{ $currentPage === 'expenses' ? 'sidebar-item-active' : 'sidebar-item' }}"
+        > Expenses 
+    </x-button>
 
-    <livewire:components.button 
-        label="Reports & Analytics" 
-        trailing="arrow_right" 
-        variant="filled"  
+    <x-button
+        id="reports"
+        variant="filled"
         wire:click="setActiveButton('reports')"
-        class="{{ $currentPage === 'reports' ? 'sidebar-item-active' : 'sidebar-item' }}"/>
+        trailing="{{ $currentPage === 'reports' ? 'arrow_drop_down' : 'arrow_right' }}"
+        class="{{ $currentPage === 'reports' ? 'sidebar-item-active' : 'sidebar-item' }}"
+        > Reports & Analytics 
+    </x-button>
 </div>

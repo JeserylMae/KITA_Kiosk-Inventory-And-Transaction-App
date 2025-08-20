@@ -6,16 +6,46 @@
             <span class="font-medium text-[var(--color-foreground)]">Kita</span>
         </button>
 
-        <livewire:components.button icon="home" label="Home" variant="ghost" size="text-sm" class="navlink" id="current"/>
-        <livewire:components.button icon="calculate" label="Calculator" variant="ghost" size="text-sm" class="navlink"/>
-        <livewire:components.button icon="notifications" label="Notifications" variant="ghost" badge="2" size="text-sm" class="navlink"/>
+        <x-button 
+            icon="home" 
+            variant="ghost"
+            wire:click="setActiveLink('home')" 
+            class="{{ $currentLink === 'home' ? 'navlink-active relative after:w-full' : 'ghost [--after-width:0%]' }}"
+            > <span class="text-sm">Home</span> 
+        </x-button>
+
+         <x-button 
+            icon="calculate" 
+            variant="ghost" 
+            class="navlink"
+            > <span class="text-sm">Calculator</span> 
+        </x-button>
+
+         <x-button 
+            icon="notifications" 
+            variant="ghost" 
+            class="navlink"
+            > <span class="text-sm">Notifications</span> 
+        </x-button>
     </div>
 
     <div class="inline-between">
-        <livewire:components.button icon="add" variant="primary" label="|" trailing="arrow_drop_down" size="text-sm" class="gap-1 rounded-br-none"/>
-        <livewire:components.button icon="search" label="Search" class="rounded-lg rounded-br-none pr-5 mx-2" size="text-sm"/>
-        <livewire:components.button icon="info" variant="ghost"/>
-        <livewire:components.button icon="settings" variant="ghost"/>
+        <x-button
+            icon="add"
+            variant="primary"
+            trailing="arrow_drop_down"
+            class="gap-1 rounded-br-none"
+            > <span class="text-sm"> | </span>
+        </x-button>
+
+        <x-button
+            icon="search"
+            class="rounded-lg rounded-br-none pr-5 mx-2"
+            > <span class="text-sm"> Search </span>
+        </x-button>
+
+        <x-button icon="info" variant="ghost"></x-button>
+        <x-button icon="settings" variant="ghost"></x-button>
 
         <flux:dropdown position="bottom" align="end" class="ml-1">
             <flux:profile avatar="{{ asset('favicon.svg') }}" name="Olivia Martin" />
