@@ -6,11 +6,11 @@ use Livewire\Component;
 
 class Navbar extends Component
 {
-    public $currentLink = 'home';
+    public $currentPage = 'home';
 
     public function setActiveLink($link)
     {
-        $this->currentLink = $link;
+        $this->currentPage = $link;
     }
 
     public function render()

@@ -10,21 +10,23 @@
             icon="home" 
             variant="ghost"
             wire:click="setActiveLink('home')" 
-            class="{{ $currentLink === 'home' ? 'navlink-active relative after:w-full' : 'ghost [--after-width:0%]' }}"
+            class="{{ $currentPage === 'home' ? 'navlink navlink-active after:w-full' : 'ghost after:w-0' }}"
             > <span class="text-sm">Home</span> 
         </x-button>
 
          <x-button 
             icon="calculate" 
             variant="ghost" 
-            class="navlink"
+            wire:click="setActiveLink('calculate')" 
+            class="{{ $currentPage === 'calculate' ? 'navlink navlink-active after:w-full' : 'ghost after:w-0' }}"
             > <span class="text-sm">Calculator</span> 
         </x-button>
 
          <x-button 
             icon="notifications" 
             variant="ghost" 
-            class="navlink"
+            wire:click="setActiveLink('notifications')" 
+            class="{{ $currentPage === 'notifications' ? 'navlink navlink-active after:w-full' : 'ghost after:w-0' }}"
             > <span class="text-sm">Notifications</span> 
         </x-button>
     </div>
@@ -40,12 +42,26 @@
 
         <x-button
             icon="search"
+            wire:click="setActiveLink('search')"
             class="rounded-lg rounded-br-none pr-5 mx-2"
             > <span class="text-sm"> Search </span>
         </x-button>
 
-        <x-button icon="info" variant="ghost"></x-button>
-        <x-button icon="settings" variant="ghost"></x-button>
+        <x-button 
+            icon="info" 
+            variant="ghost"
+            wire:click="setActiveLink('info')" 
+            class="{{ $currentPage === 'info' ? 'navlink navlink-active' : 'ghost' }}"
+            >
+        </x-button>
+
+        <x-button 
+            icon="settings" 
+            variant="ghost"
+            wire:click="setActiveLink('settings')" 
+            class="{{ $currentPage === 'settings' ? 'navlink navlink-active' : 'ghost' }}"
+            >
+        </x-button>
 
         <flux:dropdown position="bottom" align="end" class="ml-1">
             <flux:profile avatar="{{ asset('favicon.svg') }}" name="Olivia Martin" />
