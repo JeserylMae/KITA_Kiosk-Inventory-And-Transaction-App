@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class Sidebar extends Component
 {
-    public $currentPage;
+    public $currentPage = 'dashboard';
 
     public function setActiveButton($button)
     {
