@@ -61,21 +61,6 @@
         --color-error: var(--color-red-500);
         --color-error-foreground: var(--color-slate-50);
     }
-
-    .navlink-active {
-        @apply text-[var(--color-foreground)];
-    }
-
-    .navlink::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: var(--after-width, 0%); 
-        height: 2px;
-        background: var(--color-foreground);
-        transition: width 0.3s ease;
-    }
 }
 
 @layer utilities {
@@ -83,10 +68,17 @@
 }
 
 @layer components {
+    body {
+        @apply box-border text-[var(--color-foreground)];
+    }
+    h1 {
+
+    }
     .btn {
         @apply flex flex-row justify-center items-center gap-3 px-3 py-2 w-max rounded-sm; 
-        @apply border border-[var(--color-border)] bg-[var(--color-secondary)] ;
+        @apply border border-[var(--color-border)] bg-[var(--color-secondary)];
         @apply text-[var(--color-secondary-foreground)] font-normal text-base capitalize;
+        @apply transition ease-in duration-75;
 
         @apply hover:text-[var(--color-foreground)] hover:font-medium;
     }
@@ -98,19 +90,42 @@
     .btn-primary {
         @apply bg-[var(--color-primary)] text-[var(--color-primary-foreground)] rounded-xl;
     }
+    .trailing {
+        @apply transition ease-in-out duration-1000;
+    }
 
     .stack-center {
-        @apply flex flex-row justify-center items-center;
+        @apply flex flex-col justify-center items-center;
+    }
+    .inline-start {
+        @apply flex flex-row justify-start items-start;
     }
     .inline-between {
         @apply flex flex-row justify-between items-center;
     }
 
-    .navbar {
+    .layout {
         @apply w-full xl:w-7xl h-max py-2 px-8;
     }
     .card {
         @apply bg-[var(--color-card)] border border-[var(--color-border)] rounded;
+    }
+    .sidebar-item {
+        @apply w-full text-base justify-between bg-transparent border-none;
+    }
+    .sidebar-item-active {
+        @apply w-full text-base justify-between bg-[var(--color-primary)] text-[var(--color-primary-foreground)];
+    }
+
+    .navlink {
+        @apply relative;
+    }
+    .navlink-active {
+        @apply text-[var(--color-foreground)] font-medium relative;
+    }
+    .navlink::after {
+        @apply after:content-none absolute left-0 bottom-0 w-0 h-0.5 bg-[var(--color-foreground)];
+        @apply transition-[width] duration-300 ease-in-out;
     }
 }
 
