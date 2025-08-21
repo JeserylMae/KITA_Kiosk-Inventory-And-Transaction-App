@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\Pages\Landing;
 use App\Http\Controllers\Auth\AuthController;
 use App\Livewire\Pages\Dashboard;
+use App\Livewire\Pages\Inventory;
 use App\Livewire\Pages\Login;
 use App\Livewire\Pages\Register;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -60,4 +61,15 @@ Route::get('/login', Login::class)->name('page.login');
  */
 Route::middleware(['auth', 'verified', 'role:admin,owner,employee'])->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('page.dashboard');
-})
+    Route::get('/inventory', Inventory::class)->name('page.inventory');
+    Route::get('/sales', Dashboard::class)->name('page.sales');
+    Route::get('/expenses', Dashboard::class)->name('page.expenses');
+    Route::get('/reports', Dashboard::class)->name('page.reports');
+});
+
+/**
+ * Fallback method when user accessed a not existing route.
+ */
+// Route::fallback(function () {
+//     return redirect()->route('page.notFound'); 
+// });
