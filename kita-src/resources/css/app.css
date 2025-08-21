@@ -164,18 +164,5 @@
         @apply !w-max !h-max !py-1 !px-8 !rounded-lg !border-0 !text-[var(--color-foreground)]
             !bg-[var(--color-background)];
     }
-
-    .apexcharts-title-text {
-        font-size: 16px !important;
-        font-weight: 500 !important; 
-        font-family: var(--font-sans) !important;
-        fill: var(--color-secondary-foreground) !important;
-    }
-    .apexcharts-xaxis-label {
-        font-size: 12px !important;
-        font-weight: 400 !important;
-        font-family: var(--font-sans) !important;
-        fill: black !important;
-    }
 }
 
