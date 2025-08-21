@@ -16,6 +16,9 @@ class AreaChart extends Component
     public $category = [];
     public $zoom = false;
     public $xLegendAlign = 'left';
+    public $class;
+    public $xshowLabel = true;
+    public $yshowLabel = true;
 
     public function mount($category) 
     {
