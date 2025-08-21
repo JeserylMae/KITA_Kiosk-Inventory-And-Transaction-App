@@ -19,8 +19,6 @@
             <div class="w-1/4"> <livewire:navigations.sidebar/> </div>
 
             <div class="w-full pl-8"> 
-               {{-- {{ $slot }}  --}}
-
                @php $routeName = Route::currentRouteName(); @endphp
 
                @if ($routeName === 'page.dashboard')
