@@ -45,9 +45,9 @@
                 />
             </div>
         </div>
-        
-        <div class="card">
-            <livewire:components.heatmap title="Stock Status & Availability"/>
+
+        <div class="card w-lg sm:w-xl lg:w-3xl pr-8">
+            <livewire:components.bar-chart/>
         </div>
 
         <div class="card w-full overflow-x-auto">
@@ -80,6 +80,10 @@
                     @endforelse
                 </tbody>
             </table>
+        </div>
+        
+        <div class="card">
+            <livewire:components.heatmap title="Stock Status & Availability"/>
         </div>
     </div>
 </div>
