@@ -7,7 +7,7 @@
         <hr>
     </div>
 
-    <div class="stack-start container">
+    <div class="stack-start container gap-4">
         <div class="inline-start gap-4">
             <div class="card w-max bg-[var(--color-primary)]">
                 <div class="inline-between mb-2">
