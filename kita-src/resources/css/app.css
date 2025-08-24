@@ -80,6 +80,13 @@
     p {
         @apply m-0 text-base text-[var(--color-foreground)];
     }
+    th {
+        @apply font-normal text-[var(--color-foreground)] text-base px-1 py-3 
+            min-w-25 max-w-50 border-b border-b-[var(--color-border)];
+    }
+    td {
+        @apply font-normal text-[var(--color-secondary-foreground)] text-base px-2;
+    }
 }
 
 @layer utilities {
