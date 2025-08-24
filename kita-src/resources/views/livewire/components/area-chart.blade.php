@@ -1,7 +1,7 @@
 {{-- The Master doesn't talk, he acts. --}}
 
 <div>
-    <div id="areachart" 
+    <div id="areaChart" 
          class="stack-center w-max h-max rounded-2xl pt-1 pl-1 {{ $class }}">
     </div>
 </div>
@@ -9,15 +9,15 @@
 @push('scripts')
 <script>
     document.addEventListener('livewire:init', () => {
-        let chart;
+        let areaChart;
 
-        function getChartOptions() {
+        function getAreaChartOptions() {
             return {
                 chart: {
                     width: @json($width),
                     height: @json($height),
                     type: "area",
-                    foreColor: 'black',
+                    foreColor: 'var(--color-foreground)',
                     zoom: { enabled: @json($zoom) },
                     toolbar: { show: false },
                     grid: { padding: { top:0, right:0, bottom:0, left:0 } }
@@ -72,9 +72,9 @@
         }
 
         Livewire.on('area-loaded', () => {
-            if (chart) chart.destroy(); 
-            chart = new ApexCharts(document.querySelector("#areachart"), getChartOptions());
-            chart.render();
+            if (areaChart) areaChart.destroy(); 
+            areaChart = new ApexCharts(document.querySelector("#areaChart"), getAreaChartOptions());
+            areaChart.render();
         });
     });
 </script>
