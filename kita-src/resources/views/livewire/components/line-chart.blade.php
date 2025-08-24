@@ -53,6 +53,15 @@
                     strokeWidth: 5,
                     hover: { size: 10 }
                 },
+                grid: {
+                    show: true,
+                    xaxis: { 
+                        lines: { show: true }
+                    },
+                    yaxis: { 
+                        lines: { show: true }
+                    }
+                },
                 yaxis: { title: { text: @json($title) } },
                 xaxis: { categories: @json($category) },
                 tooltip: { shared: false }
