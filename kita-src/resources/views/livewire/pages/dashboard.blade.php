@@ -45,5 +45,8 @@
                 />
             </div>
         </div>
+        <div class="card w-lg sm:w-xl lg:w-3xl pr-8">
+            <livewire:components.bar-chart/>
+        </div>
     </div>
 </div>
