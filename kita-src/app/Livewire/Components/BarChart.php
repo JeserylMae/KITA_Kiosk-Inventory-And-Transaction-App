@@ -9,7 +9,7 @@ class BarChart extends Component
     /**
      * Sample values.
      */
-    public $width = 700;
+    public $width = 0;
     public $height = 350;
     public $category = [
         'Feb', 'Mar', 'Apr', 
