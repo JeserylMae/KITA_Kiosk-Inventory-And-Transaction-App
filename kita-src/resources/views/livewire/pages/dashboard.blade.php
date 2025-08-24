@@ -45,6 +45,10 @@
                 />
             </div>
         </div>
+        
+        <div class="card">
+            <livewire:components.heatmap title="Stock Status & Availability"/>
+        </div>
 
         <div class="card w-full overflow-x-auto">
             <div class="inline-between w-full mb-2">
