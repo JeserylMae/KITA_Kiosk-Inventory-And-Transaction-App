@@ -23,6 +23,8 @@ class AreaChart extends Component
     public function mount($category) 
     {
         $this->category = $category;
+
+        $this->dispatch('area-loaded');
     }
 
     public function render()
