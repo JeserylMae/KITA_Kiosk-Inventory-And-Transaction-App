@@ -7,7 +7,7 @@
         <hr>
     </div>
 
-    <div class="stack-start container">
+    <div class="stack-start container gap-4">
         <div class="inline-start gap-4">
             <div class="card w-max bg-[var(--color-primary)]">
                 <div class="inline-between mb-2">
@@ -44,6 +44,19 @@
                     class="bg-[var(--color-card)] border border-[var(--color-border)]"
                 />
             </div>
+        </div>
+
+        <div class="card w-max">
+            <h3 class="text-[var(--color-vix-3)]">Growth Trendline</h3>
+            <livewire:components.line-chart
+                width="100%"
+                height="250"
+                zoom="true"
+                title=""
+                :colors="['var(--color-vix-2)']"
+                :markerStroke="['var(--color-vix-2)']"
+                :series="[['name' => 'Growth', 'data' => ['34', '34', '65', '123']]]"
+            />
         </div>
     </div>
 </div>
