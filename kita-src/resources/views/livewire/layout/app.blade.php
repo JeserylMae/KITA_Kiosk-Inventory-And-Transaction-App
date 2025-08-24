@@ -19,8 +19,19 @@
             <div class="w-1/4"> <livewire:navigations.sidebar/> </div>
 
             <div class="w-full pl-8"> 
-               <h2>hskdsh</h2>
-               {{ $slot }} 
+               @php $routeName = Route::currentRouteName(); @endphp
+
+               @if ($routeName === 'page.dashboard')
+                  <livewire:pages.dashboard />
+               @elseif ($routeName === 'page.inventory')
+                  <livewire:pages.inventory />
+               @elseif ($routeName === 'page.sales')
+                  <livewire:pages.dashboard />
+               @elseif ($routeName === 'page.expenses')
+                  <livewire:pages.dashboard />
+               @elseif ($routeName === 'page.reports')
+                  <livewire:pages.dashboard />
+               @endif
             </div>
          </div>
       </div>

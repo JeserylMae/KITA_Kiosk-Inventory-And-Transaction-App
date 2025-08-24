@@ -9,4 +9,5 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
+@stack('scripts')
 @vite(['resources/css/app.css', 'resources/js/app.js'])
