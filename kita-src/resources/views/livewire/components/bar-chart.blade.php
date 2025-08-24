@@ -1,7 +1,7 @@
 {{-- Nothing in the world is as soft and yielding as water. --}}
 
-<div>
-    <div id="barChart"></div>
+<div class="h-max">
+    <div id="barChart" class=""></div>
 </div>
 
 @push('scripts')
@@ -70,9 +70,9 @@
             legend: {
                 position: 'bottom',
                 horizontalAlign: 'right',
-                floating: true,
-                offsetY: 30,
-                offsetX: -10,
+                floating: false,
+                offsetY: 0,
+                offsetX: 0,
                  labels: {
                     colors: 'var(--color-foreground)', 
                     useSeriesColors: false 
