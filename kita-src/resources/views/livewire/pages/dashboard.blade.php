@@ -58,5 +58,45 @@
                 :series="[['name' => 'Growth', 'data' => ['34', '34', '65', '123']]]"
             />
         </div>
+        
+        <div class="card w-lg sm:w-xl lg:w-3xl pr-8">
+            <livewire:components.bar-chart/>
+        </div>
+
+        <div class="card w-full overflow-x-auto">
+            <div class="inline-between w-full mb-2">
+                <h3 class="text-[var(--color-vix-3)]"> Products Near Expiry </h3>
+                <x-button variant="primary" trailing="add_circle" class="py-1"> Restock </x-button>
+            </div>
+
+            <table class="border-none w-full">
+                <thead>
+                    <tr class="bg-[var(--color-background)]"> 
+                        <th>Products</th>
+                        <th>Brand</th>
+                        <th>Expiry Date</th>
+                        <th>Quantity</th>
+                        <th>Days Until Expiry</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @forelse ($data as $row)
+                        <tr>
+                            <td>{{ $row['product'] }}</td>
+                            <td>{{ $row['brand'] }}</td>
+                            <td class="text-center">{{ $row['expiry_date'] }}</td>
+                            <td class="text-center">{{ $row['quantity'] }}</td>
+                            <td class="text-center">{{ $row['days_until_expiry'] }}</td>
+                        </tr>
+                    @empty
+                        <tr><td colspan="5" class="text-center py-5"> No items were invoiced in this time frame. </td></tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="card">
+            <livewire:components.heatmap title="Stock Status & Availability"/>
+        </div>
     </div>
 </div>
