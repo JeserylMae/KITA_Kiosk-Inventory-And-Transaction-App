@@ -114,5 +114,10 @@
         <div class="card">
             <livewire:components.heatmap title="Stock Status & Availability"/>
         </div>
+
+        <div>
+            <x-date-range-picker wire:model="selectedDate"/>
+            <label>{{ $selectedDate }}</label>
+        </div>
     </div>
 </div>
