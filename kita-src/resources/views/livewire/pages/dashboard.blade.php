@@ -11,7 +11,7 @@
         <div class="inline-start gap-4">
             <div class="card w-max bg-[var(--color-primary)]">
                 <div class="inline-between mb-2">
-                    <h3>Sales Snapshot</h3>
+                    <h3 class="text-[var(--color-primary-foreground)]">Sales Snapshot</h3>
                     
                     <flux:select class="dropdown dropdown-default" size="sm">
                         <flux:select.option selected>Day</flux:select.option>
@@ -23,12 +23,12 @@
                 </div>
         
                 <div class="w-max h-max grid grid-cols-3 text-center gap-x-4">
-                    <h1 class="min-w-[8rem]">₱ {{ number_format($revenue, 2) }}</h1>
-                    <h1 class="min-w-[8rem]">₱ {{ number_format($profit, 2) }}</h1>
-                    <h1 class="min-w-[8rem]">₱ {{ number_format($sales, 2) }}</h1>
-                    <p class="uppercase text-[var(--color-primary-foreground)]">Revenue</p>
-                    <p class="uppercase text-[var(--color-primary-foreground)]">Profit</p>
-                    <p class="uppercase text-[var(--color-primary-foreground)]">Sales</p>
+                    <h1 class="min-w-[8rem] text-[var(--color-primary-foreground)]">₱ {{ number_format($revenue, 2) }}</h1>
+                    <h1 class="min-w-[8rem] text-[var(--color-primary-foreground)]">₱ {{ number_format($profit, 2) }}</h1>
+                    <h1 class="min-w-[8rem] text-[var(--color-primary-foreground)]">₱ {{ number_format($sales, 2) }}</h1>
+                    <p class="uppercase text-[var(--color-secondary-foreground)]">Revenue</p>
+                    <p class="uppercase text-[var(--color-secondary-foreground)]">Profit</p>
+                    <p class="uppercase text-[var(--color-secondary-foreground)]">Sales</p>
                 </div>
             </div>
             <div class="!w-full">
@@ -113,11 +113,6 @@
         
         <div class="card">
             <livewire:components.heatmap title="Stock Status & Availability"/>
-        </div>
-
-        <div>
-            <x-date-range-picker wire:model="selectedDate"/>
-            <label>{{ $selectedDate }}</label>
         </div>
     </div>
 </div>
