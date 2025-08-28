@@ -66,6 +66,14 @@
                     axisTicks: { show: false },
                     axisBorder: { show: false }
                 },
+                grid: {
+                    show: true,
+                    borderColor: 'var(--color-border)',
+                    strokeDashArray: 0,
+                    position: 'back',
+                    xaxis: { lines: { show: true } },   
+                    yaxis: { lines: { show: true } },  
+                },
                 legend: { horizontalAlign: @json($xLegendAlign) },
                 tooltip: { followCursor: true }
             };
