@@ -1,9 +1,14 @@
 
+@props([
+    'id' => 'dateRange',
+    'name' => 'dateRange'
+])
+
 <div class="inline-between btn bg-[var(--color-background)] p-1">
     <span class="material-symbols-outlined"> date_range </span>
     <input type="text" 
-           id="{{ $id ?? 'dateRange' }}" 
-           name="{{ $name ?? 'dateRange' }}" 
+           id="{{ $id }}" 
+           name="{{ $name }}" 
            class="w-55 px-1" 
            placeholder="Select date range" 
            {{ $attributes }}>
