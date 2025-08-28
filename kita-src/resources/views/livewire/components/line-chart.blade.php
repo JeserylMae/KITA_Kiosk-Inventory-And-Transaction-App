@@ -64,7 +64,14 @@
                 },
                 yaxis: { title: { text: @json($title) } },
                 xaxis: { categories: @json($category) },
-                tooltip: { shared: false }
+                tooltip: { 
+                    shared: false,
+                    theme: 'dark',
+                    style: {
+                        fontSize: '12px',
+                        fontFamily: 'inherit'
+                    },
+                 }
             };
         }
         Livewire.on('line-loaded', () => {
