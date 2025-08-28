@@ -80,7 +80,14 @@
                 fontFamily: 'var(--font-sans)',
                 fontWeight: 400
             },
-            fill: { opacity: 1 }
+            fill: { opacity: 1 },
+            tooltip: {
+                theme: 'dark',
+                style: {
+                    fontSize: '12px',
+                    fontFamily: 'inherit'
+                },
+            }
         };
     }
 
