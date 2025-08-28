@@ -25,6 +25,8 @@ class Dashboard extends Component
         // [ 'product' => 'Candy', 'brand' => 'SugarRush', 'expiry_date' => '2026-01-05', 'quantity' => 100, 'days_until_expiry' => '134 days' ],
     ];
     public $selectedDate;
+    public $qsDateFilter;
+    public $pneDateFilter;
 
     public function mount()
     {
