@@ -24,7 +24,7 @@ class Dashboard extends Component
         // [ 'product' => 'Juice', 'brand' => 'FreshCo', 'expiry_date' => '2025-11-20', 'quantity' => 30, 'days_until_expiry' => '88 days' ],
         // [ 'product' => 'Candy', 'brand' => 'SugarRush', 'expiry_date' => '2026-01-05', 'quantity' => 100, 'days_until_expiry' => '134 days' ],
     ];
-
+    public $selectedDate;
 
     public function mount()
     {
