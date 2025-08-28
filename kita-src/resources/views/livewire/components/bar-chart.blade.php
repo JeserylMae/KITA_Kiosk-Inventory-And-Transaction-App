@@ -35,14 +35,13 @@
                 width: 2,
                 colors: ['transparent']
             },
-            grid: {
+           grid: {
                 show: true,
-                xaxis: { 
-                    lines: { show: true }
-                },
-                yaxis: {
-                    lines: { show: true }
-                }
+                borderColor: 'var(--color-border)',
+                strokeDashArray: 0,
+                position: 'back',
+                xaxis: { lines: { show: true } },   
+                yaxis: { lines: { show: true } },  
             },
             xaxis: { 
                 categories: @json($category),

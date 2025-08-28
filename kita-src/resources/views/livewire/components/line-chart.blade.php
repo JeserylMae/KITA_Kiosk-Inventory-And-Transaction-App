@@ -55,12 +55,11 @@
                 },
                 grid: {
                     show: true,
-                    xaxis: { 
-                        lines: { show: true }
-                    },
-                    yaxis: { 
-                        lines: { show: true }
-                    }
+                    borderColor: 'var(--color-border)',
+                    strokeDashArray: 0,
+                    position: 'back',
+                    xaxis: { lines: { show: true } },   
+                    yaxis: { lines: { show: true } },  
                 },
                 yaxis: { title: { text: @json($title) } },
                 xaxis: { categories: @json($category) },
