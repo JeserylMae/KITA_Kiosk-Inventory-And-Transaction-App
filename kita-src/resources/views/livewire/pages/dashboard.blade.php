@@ -111,7 +111,7 @@
             </table>
         </div>
         
-        <div class="card">
+        <div class="card w-full">
             <livewire:components.heatmap title="Stock Status & Availability"/>
         </div>
     </div>
