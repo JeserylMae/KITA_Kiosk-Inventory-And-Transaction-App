@@ -11,9 +11,9 @@
         <div class="inline-start gap-4">
             <div class="card w-max bg-[var(--color-primary)]">
                 <div class="inline-between mb-2">
-                    <h3>Sales Snapshot</h3>
+                    <h3 class="text-[var(--color-primary-foreground)]">Sales Snapshot</h3>
                     
-                    <flux:select class="dropdown" size="sm">
+                    <flux:select class="dropdown dropdown-default" size="sm">
                         <flux:select.option selected>Day</flux:select.option>
                         <flux:select.option>Week</flux:select.option>
                         <flux:select.option>Month</flux:select.option>
@@ -23,9 +23,9 @@
                 </div>
         
                 <div class="w-max h-max grid grid-cols-3 text-center gap-x-4">
-                    <h1 class="min-w-[8rem]">₱ {{ number_format($revenue, 2) }}</h1>
-                    <h1 class="min-w-[8rem]">₱ {{ number_format($profit, 2) }}</h1>
-                    <h1 class="min-w-[8rem]">₱ {{ number_format($sales, 2) }}</h1>
+                    <h1 class="min-w-[8rem] text-[var(--color-primary-foreground)]">₱ {{ number_format($revenue, 2) }}</h1>
+                    <h1 class="min-w-[8rem] text-[var(--color-primary-foreground)]">₱ {{ number_format($profit, 2) }}</h1>
+                    <h1 class="min-w-[8rem] text-[var(--color-primary-foreground)]">₱ {{ number_format($sales, 2) }}</h1>
                     <p class="uppercase text-[var(--color-secondary-foreground)]">Revenue</p>
                     <p class="uppercase text-[var(--color-secondary-foreground)]">Profit</p>
                     <p class="uppercase text-[var(--color-secondary-foreground)]">Sales</p>
@@ -47,7 +47,16 @@
         </div>
 
         <div class="card w-max">
-            <h3 class="text-[var(--color-vix-3)]">Growth Trendline</h3>
+            <div class="inline-between">
+                <h3 class="text-[var(--color-vix-3)]">Growth Trendline</h3>
+                <flux:select class="dropdown dropdown-primary" size="sm">
+                    <flux:select.option selected>Day</flux:select.option>
+                    <flux:select.option>Week</flux:select.option>
+                    <flux:select.option>Month</flux:select.option>
+                    <flux:select.option>Quarterly</flux:select.option>
+                    <flux:select.option>Year</flux:select.option>
+                </flux:select>
+            </div>
             <livewire:components.line-chart
                 width="100%"
                 height="250"
@@ -60,13 +69,20 @@
         </div>
         
         <div class="card w-lg sm:w-xl lg:w-3xl pr-8">
+            <div class="inline-between">
+                <h3 class="text-[var(--color-vix-3)]">Quarterly Sales Standouts</h3>
+                <x-date-range-picker wire:model="qsDateFilter" id="qsDateFilter"/>
+            </div>
             <livewire:components.bar-chart/>
         </div>
 
         <div class="card w-full overflow-x-auto">
             <div class="inline-between w-full mb-2">
                 <h3 class="text-[var(--color-vix-3)]"> Products Near Expiry </h3>
-                <x-button variant="primary" trailing="add_circle" class="py-1"> Restock </x-button>
+                <div class="flex flex-row- justify-end items-center gap-x-4">
+                    <x-date-range-picker wire:model="pneDateFilter"/>
+                    <x-button variant="primary" trailing="add_circle" class="py-1"> Restock </x-button>
+                </div>
             </div>
 
             <table class="border-none w-full">
@@ -97,11 +113,6 @@
         
         <div class="card">
             <livewire:components.heatmap title="Stock Status & Availability"/>
-        </div>
-
-        <div>
-            <x-date-range-picker wire:model="selectedDate"/>
-            <label>{{ $selectedDate }}</label>
         </div>
     </div>
 </div>
