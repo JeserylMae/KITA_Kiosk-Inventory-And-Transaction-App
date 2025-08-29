@@ -10,6 +10,8 @@ use Livewire\Attributes\Title;
 #[Title('Inventory')]
 class Inventory extends Component
 {
+    public $class;
+    
     public function render()
     {
         return view('livewire.pages.inventory');
