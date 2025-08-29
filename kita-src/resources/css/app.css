@@ -168,8 +168,13 @@
     }
 
     .dropdown {
-        @apply !w-max !h-max !py-1 !px-8 !rounded-lg !border-0 !text-[var(--color-foreground)]
-            !bg-[var(--color-background)];
+        @apply !w-max !h-max !py-1 !px-8 !rounded-lg !border-0;
+    }
+    .dropdown-default {
+        @apply !text-[var(--color-foreground)] !bg-[var(--color-background)];
+    }
+    .dropdown-primary {
+        @apply !text-[var(--color-primary-foreground)] !bg-[var(--color-primary)];
     }
 }
 

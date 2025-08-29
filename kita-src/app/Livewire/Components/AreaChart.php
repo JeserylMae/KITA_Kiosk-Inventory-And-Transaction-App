@@ -20,10 +20,8 @@ class AreaChart extends Component
     public $xshowLabel = true;
     public $yshowLabel = true;
 
-    public function mount($category) 
+    public function mount() 
     {
-        $this->category = $category;
-
         $this->dispatch('area-loaded');
     }
 
