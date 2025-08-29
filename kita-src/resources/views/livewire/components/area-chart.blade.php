@@ -75,7 +75,14 @@
                     yaxis: { lines: { show: true } },  
                 },
                 legend: { horizontalAlign: @json($xLegendAlign) },
-                tooltip: { followCursor: true }
+                tooltip: { 
+                    followCursor: true,
+                    theme: 'dark',
+                    style: {
+                        fontSize: '12px',
+                        fontFamily: 'inherit'
+                    }, 
+                }
             };
         }
 
