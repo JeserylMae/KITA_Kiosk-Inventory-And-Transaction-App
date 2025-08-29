@@ -105,7 +105,7 @@
                             <td class="text-center">{{ $row['days_until_expiry'] }}</td>
                         </tr>
                     @empty
-                        <tr><td colspan="5" class="text-center py-5"> No items were invoiced in this time frame. </td></tr>
+                        <tr><td colspan="5" class="text-center py-15"> No items were invoiced in this time frame. </td></tr>
                     @endforelse
                 </tbody>
             </table>
