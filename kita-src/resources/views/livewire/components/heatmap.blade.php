@@ -1,7 +1,7 @@
 {{-- Care about people's approval and you will be their prisoner. --}}
 
-<div>
-    <div id="heatmap" class="w-xl md:w-2xl lg:w-3xl"></div>
+<div class="w-full">
+    <div id="heatmap" class="w-xl md:w-2xl lg:w-full"></div>
 </div>
 
 @push('scripts')
