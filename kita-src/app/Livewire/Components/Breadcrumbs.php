@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class Breadcrumbs extends Component
 {
-    public $paths;
+    public array $path = [];
     
     public function render()
     {
