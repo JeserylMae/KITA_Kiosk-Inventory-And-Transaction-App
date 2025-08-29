@@ -1,11 +1,11 @@
 
-<div id="sidebar">
+<div id="sidebar" class="stack-start">
     <x-button 
         id="dashboard" 
         variant="filled" 
         wire:navigate
         href="{{ route('page.dashboard') }}"
-        class="{{ Route::is('page.dashboard') ? 'sidebar-item-active' : 'sidebar-item' }}"
+        class="order-1 {{ Route::is('page.dashboard') ? 'sidebar-item-active' : 'sidebar-item' }}"
         > Dashboard 
     </x-button>
 
@@ -15,7 +15,7 @@
         wire:navigate
         href="{{ route('page.inventory') }}"
         trailing="{{ Route::is('page.inventory') ? 'arrow_drop_down' : 'arrow_right' }}"
-        class="{{ Route::is('page.inventory') ? 'sidebar-item-active trailing' : 'sidebar-item' }}"
+        class="order-2 {{ Route::is('page.inventory') ? 'sidebar-item-active trailing' : 'sidebar-item' }}"
         > Inventory  
     </x-button>
 
@@ -24,7 +24,7 @@
         variant="filled"
         wire:navigate
         href="{{ route('page.sales') }}" 
-        class="{{ Route::is('page.sales') ? 'sidebar-item-active' : 'sidebar-item' }}"
+        class="order-4 {{ Route::is('page.sales') ? 'sidebar-item-active' : 'sidebar-item' }}"
         > Sales 
     </x-button>
 
@@ -33,7 +33,7 @@
         variant="filled"
         wire:navigate
         href="{{ route('page.expenses') }}"
-        class="{{ Route::is('page.expenses') ? 'sidebar-item-active' : 'sidebar-item' }}"
+        class="order-5 {{ Route::is('page.expenses') ? 'sidebar-item-active' : 'sidebar-item' }}"
         > Expenses 
     </x-button>
 
@@ -43,7 +43,11 @@
         wire:navigate
         href="{{ route('page.reports') }}"
         trailing="{{ Route::is('page.reports') ? 'arrow_drop_down' : 'arrow_right' }}"
-        class="{{ Route::is('page.reports') ? 'sidebar-item-active' : 'sidebar-item' }}"
+        class="order-6 {{ Route::is('page.reports') ? 'sidebar-item-active' : 'sidebar-item' }}"
         > Reports & Analytics 
     </x-button>
+
+    @if (request()->routeIs('page.inventory'))
+        <livewire:pages.inventory class="order-3"/>
+    @endif
 </div>
