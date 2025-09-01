@@ -24,7 +24,7 @@
                @if ($routeName === 'page.dashboard')
                   <livewire:pages.dashboard />
                @elseif ($routeName === 'page.inventory')
-                  <livewire:pages.dashboard />
+                  <livewire:pages.inventory />
                @elseif ($routeName === 'page.sales')
                   <livewire:pages.dashboard />
                @elseif ($routeName === 'page.expenses')
