@@ -18,11 +18,9 @@ class Dashboard extends Component
     public $profit = 0.00;
     public $sales = 0.00;
     public $data = [
-        // [ 'product' => 'Chips', 'brand' => 'ABC', 'expiry_date' => '2025-10-01', 'quantity' => 20, 'days_until_expiry' => '38 days' ],
-        // [ 'product' => 'Soda', 'brand' => 'XYZ', 'expiry_date' => '2025-12-15', 'quantity' => 50, 'days_until_expiry' => '113 days' ],
-        // [ 'product' => 'Cookies', 'brand' => 'SweetBite', 'expiry_date' => '2025-09-30', 'quantity' => 15, 'days_until_expiry' => '37 days' ],
-        // [ 'product' => 'Juice', 'brand' => 'FreshCo', 'expiry_date' => '2025-11-20', 'quantity' => 30, 'days_until_expiry' => '88 days' ],
-        // [ 'product' => 'Candy', 'brand' => 'SugarRush', 'expiry_date' => '2026-01-05', 'quantity' => 100, 'days_until_expiry' => '134 days' ],
+        ['Ice Cream', 'ABC', 'Jul 23, 2026', '45', '342'],
+        ['Ice Cream', 'ABC', 'Jul 23, 2026', '45', '342'],
+        ['Ice Cream', 'ABC', 'Jul 23, 2026', '45', '342'],
     ];
     public $selectedDate;
     public $qsDateFilter;
