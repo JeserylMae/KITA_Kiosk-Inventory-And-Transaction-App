@@ -176,5 +176,19 @@
     .dropdown-primary {
         @apply !text-[var(--color-primary-foreground)] !bg-[var(--color-primary)];
     }
+
+    .checkbox {
+        @apply appearance-none w-5 h-5 border-2 border-[var(--color-filled)]
+            rounded bg-[var(--color-muted)] checked:bg-[var(--color-primary)]
+            checked:border-[var(--color-primary)];
+    }
+
+    .checkmark {
+        @apply !text-base text-transparent absolute z-10 left-[0.15rem] bottom-[0.05rem] select-none;
+    }
+
+    .checkbox:checked ~ .checkmark {
+        @apply text-[var(--color-primary-foreground)];
+    }
 }
 
