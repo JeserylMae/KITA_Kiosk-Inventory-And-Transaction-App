@@ -1,7 +1,7 @@
-
-<table>
+<table class="w-full border-none">
     <thead>
-        <tr>
+        <tr class="bg-[var(--color-background)]">
+            <th class="min-w-1"> </th>
             @foreach ($headers as $header)
                 <th> {{ $header }} </th>
             @endforeach
@@ -9,12 +9,18 @@
     </thead>
 
     <tbody>
-        @foreach ($rows as $row)
-            <tr>
+        @forelse ($rows as $row)
+            <tr class="">
+                @php $cbid = uniqid("", true); @endphp
+
+                <td> <input type="checkbox" class="checkbox" name="{{ $cbid }}" id="{{ $cbid }}"></td>
+                
                 @foreach($row as $col)
                     <td> {{ $col }} </td>
                 @endforeach
             </tr>
-        @endforeach
+        @empty
+            <tr><td colspan="{{ count($headers) }}" class="text-center py-20"> {{ $empty }} </td></tr>
+        @endforelse
     </tbody>
 </table>
