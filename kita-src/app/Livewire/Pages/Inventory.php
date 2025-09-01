@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Pages;
 
+use App\View\Components\button;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
@@ -11,6 +12,13 @@ use Livewire\Attributes\Title;
 class Inventory extends Component
 {
     public $class;
+    public $activeTabButton;
+    protected $listeners = ['switchTab'];
+
+    public function switchTab($button)
+    {
+        $this->activeTabButton = $button;
+    }
     
     public function render()
     {
