@@ -6,7 +6,8 @@ use Livewire\Component;
 
 // Sample usage:
 // <livewire:components.table
-//     :headers="['Product', 
+//     :headers="[
+//         'Product', 
 //         'Brand', 
 //         'Quantity', 
 //         'Category', 
@@ -27,6 +28,7 @@ class Table extends Component
     public array $headers = [];
     public array $rows = [];
     public string $empty;
+    public bool $checkbox = false;
     
     public function render()
     {

@@ -85,30 +85,21 @@
                 </div>
             </div>
 
-            <table class="border-none w-full">
-                <thead>
-                    <tr class="bg-[var(--color-background)]"> 
-                        <th>Products</th>
-                        <th>Brand</th>
-                        <th>Expiry Date</th>
-                        <th>Quantity</th>
-                        <th>Days Until Expiry</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($data as $row)
-                        <tr>
-                            <td>{{ $row['product'] }}</td>
-                            <td>{{ $row['brand'] }}</td>
-                            <td class="text-center">{{ $row['expiry_date'] }}</td>
-                            <td class="text-center">{{ $row['quantity'] }}</td>
-                            <td class="text-center">{{ $row['days_until_expiry'] }}</td>
-                        </tr>
-                    @empty
-                        <tr><td colspan="5" class="text-center py-15"> No items were invoiced in this time frame. </td></tr>
-                    @endforelse
-                </tbody>
-            </table>
+            <livewire:components.table 
+                :headers="[
+                    'Products',
+                    'Brand',
+                    'Expiry Date',
+                    'Quantity',
+                    'Days Until Expiry'
+                ]"
+                :rows="$data"
+                empty="No items were invoiced in this time frame."
+            />
+        </div>
+        
+        <div class="card w-full">
+            <livewire:components.heatmap title="Stock Status & Availability"/>
         </div>
         
         <div class="card w-full">
