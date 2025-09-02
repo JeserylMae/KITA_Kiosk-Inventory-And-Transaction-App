@@ -108,7 +108,8 @@
 
     }
     .btn-primary {
-        @apply bg-[var(--color-primary)] text-[var(--color-primary-foreground)] rounded-xl;
+        @apply bg-[var(--color-primary)] text-[var(--color-primary-foreground)] rounded-xl
+            hover:bg-[var(--color-vix-2)];
     }
     .trailing {
         @apply transition ease-in-out duration-1000;
