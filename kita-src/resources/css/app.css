@@ -177,11 +177,24 @@
     .dropdown-primary {
         @apply !text-[var(--color-primary-foreground)] !bg-[var(--color-primary)];
     }
+    .dropdown-filled {
+        @apply !text-[var(--color-secondary-foreground)] !bg-[var(--color-secondary)];
+    }
 
     .checkbox {
         @apply appearance-none w-5 h-5 border-2 border-[var(--color-filled)]
             rounded bg-[var(--color-muted)] checked:bg-[var(--color-primary)]
             checked:border-[var(--color-primary)];
+    }
+    .checkbox-items [data-flux-button] {
+        @apply !bg-[var(--color-secondary)] !text-[var(--color-secondary-foreground)]
+            border border-[var(--color-border)];
+    }
+    .checkbox-items [data-flux-menu] {
+        @apply !bg-[var(--color-background)] !text-[var(--color-foreground)];
+    }
+    .checkbox-items [data-flux-menu] [data-active] {
+        @apply !bg-[var(--color-card)];
     }
 
     .checkmark {
