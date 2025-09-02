@@ -13,6 +13,12 @@ class Inventory extends Component
 {
     public $class;
     public $activeTabButton = 'products';
+    
+    public array $productOptions = ['Ice Cream'];
+    public array $brandOptions = ['ABC'];
+    public array $categoryOptions = ['Food'];
+    public array $sellingPriceOptions = [20];
+    
     protected $listeners = ['switchTab'];
 
     public function switchTab($button)
