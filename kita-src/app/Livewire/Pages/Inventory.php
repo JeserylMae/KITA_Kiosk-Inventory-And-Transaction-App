@@ -12,7 +12,7 @@ use Livewire\Attributes\Title;
 class Inventory extends Component
 {
     public $class;
-    public $activeTabButton;
+    public $activeTabButton = 'products';
     protected $listeners = ['switchTab'];
 
     public function switchTab($button)
